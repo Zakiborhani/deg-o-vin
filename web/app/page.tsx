@@ -307,7 +307,7 @@ export default function Home() {
         </ul>
         <div className="dv-nav-btns">
           <a className="dv-btn dv-btn-outline" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
-          <a className="dv-btn dv-btn-gold"    href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online</a>
+          <a className="dv-btn dv-btn-gold"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a>
         </div>
         <button
           className="dv-hamburger"
@@ -335,8 +335,8 @@ export default function Home() {
           <div className="dv-hero-rule" />
           <p className="dv-hero-sub">Pizza Contemporanea Italiana</p>
           <div className="dv-hero-actions">
-            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online</a>
-            <a className="dv-btn dv-btn-outline dv-btn-lg" href="#dv-menu">Se menyn</a>
+            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a>
+            <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
           </div>
         </div>
         <div className="dv-hero-scroll">
@@ -573,7 +573,7 @@ export default function Home() {
             Boka ett bord för en afton av äkta napolitansk pizza, eller beställ hem och upplev smakerna hemma.
           </p>
           <div className="dv-book-actions">
-            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online &rarr;</a>
+            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online &rarr;</a>
             <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
           </div>
         </div>
@@ -640,7 +640,7 @@ export default function Home() {
             <div>
               <div className="dv-footer-h">Besök oss</div>
               <ul className="dv-footer-links">
-                <li><a href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online</a></li>
+                <li><a href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a></li>
                 <li><a href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a></li>
                 <li><a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma" target="_blank" rel="noopener noreferrer">Vägbeskrivning</a></li>
               </ul>
