@@ -162,8 +162,9 @@ const TABS = [
 export default function Home() {
   const [scrolled,    setScrolled]   = useState(false);
   const [loaded,      setLoaded]     = useState(false);
-  const [activeTab,   setActiveTab]  = useState("antipasti");
-  const [mobileOpen,  setMobileOpen] = useState(false);
+  const [activeTab,     setActiveTab]     = useState("antipasti");
+  const [mobileOpen,    setMobileOpen]    = useState(false);
+  const [tabsScrolled,  setTabsScrolled]  = useState(false);
 
   const heroBgRef    = useRef<HTMLDivElement>(null);
   const aboutImgRef  = useRef<HTMLImageElement>(null);
@@ -257,6 +258,17 @@ export default function Home() {
     ind.style.left  = (tabR.left - barR.left) + "px";
     ind.style.width = tabR.width + "px";
   }, [activeTab]);
+
+  /* dismiss the "scroll for more" hint once the user has actually scrolled the tab bar */
+  useEffect(() => {
+    const bar = tabBarRef.current;
+    if (!bar) return;
+    const onScroll = () => {
+      if (bar.scrollLeft > 4) setTabsScrolled(true);
+    };
+    bar.addEventListener("scroll", onScroll, { passive: true });
+    return () => bar.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div
@@ -355,18 +367,25 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="dv-tab-bar" ref={tabBarRef}>
-            <div className="dv-tab-border" />
-            <div className="dv-tab-indicator" ref={indicatorRef} />
-            {TABS.map((tab) => (
-              <button
-                key={tab.key}
-                className={`dv-menu-tab${activeTab === tab.key ? " active" : ""}`}
-                onClick={() => setActiveTab(tab.key)}
-              >
-                {tab.label}
-              </button>
-            ))}
+          <div className="dv-tab-bar-outer">
+            <div className="dv-tab-bar" ref={tabBarRef}>
+              <div className="dv-tab-border" />
+              <div className="dv-tab-indicator" ref={indicatorRef} />
+              {TABS.map((tab) => (
+                <button
+                  key={tab.key}
+                  className={`dv-menu-tab${activeTab === tab.key ? " active" : ""}`}
+                  onClick={() => setActiveTab(tab.key)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            {!tabsScrolled && (
+              <div className="dv-tab-scroll-hint" aria-hidden="true">
+                <span className="dv-tab-scroll-chevron">›</span>
+              </div>
+            )}
           </div>
 
           {TABS.map((tab) => (
