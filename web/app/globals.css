@@ -251,11 +251,14 @@
   backdrop-filter: blur(24px) saturate(1.3);
   box-shadow: 0 1px 0 rgba(36,32,23,.6);
 }
-.dv-nav-logo {
-  font-family: var(--font-playfair), serif;
-  font-size: 1.3rem; font-weight: 700; color: var(--dv-cream); text-decoration: none; letter-spacing: .04em;
+.dv-nav-logo { text-decoration: none; display: flex; align-items: center; }
+.dv-logo-img {
+  height: 40px; width: auto; display: block;
+  filter: brightness(0) invert(1);
+  transition: opacity .3s;
 }
-.dv-nav-logo em { font-style: italic; color: var(--dv-gold); }
+.dv-logo-img--lg { height: 64px; }
+.dv-nav-logo:hover .dv-logo-img { opacity: .8; }
 .dv-nav-links { display: flex; gap: 2.4rem; list-style: none; }
 .dv-nav-links a {
   font-size: .66rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase;
