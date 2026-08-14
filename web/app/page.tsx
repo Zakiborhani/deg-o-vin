@@ -213,6 +213,7 @@ export default function Home() {
           <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
           <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
+          <li><a href="#dv-hours"   onClick={() => setMobileOpen(false)}>Öppettider</a></li>
           <li><a href="#dv-book"    onClick={() => setMobileOpen(false)}>Boka bord</a></li>
         </ul>
         <div className="dv-nav-btns">
@@ -406,6 +407,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* hours */}
+      <section id="dv-hours" className="dv-section">
+        <div className="dv-hours-inner">
+          <div className="dv-hours-head dv-reveal">
+            <div className="dv-section-label center">Välkommen</div>
+            <h2 className="dv-section-title">Öppettider</h2>
+          </div>
+          <div className="dv-hours-grid dv-reveal dv-reveal-d1">
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Måndag – Torsdag</div>
+              <div className="dv-hours-time">kl. 11–21</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Fredag</div>
+              <div className="dv-hours-time">kl. 11–22</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Lördag</div>
+              <div className="dv-hours-time">kl. 12–22</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Söndag</div>
+              <div className="dv-hours-time">kl. 12–21</div>
+            </div>
+          </div>
+          <div className="dv-hours-lunch dv-reveal dv-reveal-d2">
+            <div className="dv-hours-lunch-label">Dagligt erbjudande</div>
+            <div className="dv-hours-lunch-title">Luncherbjudande — 159 kr</div>
+            <div className="dv-hours-lunch-time">kl. 11–13</div>
+            <p className="dv-hours-lunch-desc">
+              Samtliga pizzor under 200 kr inkluderar läsk (ej San Pellegrino) och espresso!
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* book */}
       <section id="dv-book">
         <div className="dv-book-bg-text">Deg &amp; Vin</div>
@@ -441,6 +478,7 @@ export default function Home() {
                 <li><a href="#dv-about">Om oss</a></li>
                 <li><a href="#dv-menu">Meny</a></li>
                 <li><a href="#dv-gallery">Galleri</a></li>
+                <li><a href="#dv-hours">Öppettider</a></li>
                 <li><a href="#dv-book">Boka bord</a></li>
               </ul>
             </div>
