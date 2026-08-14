@@ -718,7 +718,7 @@
 }
 @media (max-width: 860px) {
   .dv-nav-links { display: none; }
-  .dv-nav-btns .dv-btn-outline { display: none; }
+  .dv-nav-btns { display: none; }
   .dv-hamburger { display: flex; }
   .dv-about-grid { grid-template-columns: 1fr; }
   .dv-about-img-col img { min-height: 400px; }
