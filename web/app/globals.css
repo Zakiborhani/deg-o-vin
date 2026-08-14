@@ -162,7 +162,7 @@
   --dv-gold-dim: rgba(196,151,59,.18);
   --dv-cream:    #F2EAD6;
   --dv-text:     #E8DFC8;
-  --dv-muted:    #7C7060;
+  --dv-muted:    #8A7E6E;
   --dv-border:   #242017;
   --dv-ease:     cubic-bezier(.76,0,.24,1);
   --dv-ease2:    cubic-bezier(.34,1.56,.64,1);
@@ -253,7 +253,7 @@
 }
 .dv-nav-logo { text-decoration: none; display: flex; align-items: center; }
 .dv-logo-img {
-  height: 40px; width: auto; display: block;
+  height: 40px; width: auto; display: block; align-self: flex-start;
   filter: brightness(0) invert(1);
   transition: opacity .3s;
 }
