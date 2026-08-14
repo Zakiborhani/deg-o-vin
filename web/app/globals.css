@@ -459,7 +459,7 @@
 .dv-about-text-col { padding: 6rem 5rem 6rem 4.5rem; display: flex; flex-direction: column; justify-content: center; }
 .dv-about-quote {
   font-family: var(--font-cormorant), serif; font-size: 1.45rem; font-weight: 300; font-style: italic;
-  color: rgba(242,234,214,.45); line-height: 1.6; margin: 2rem 0 2.5rem;
+  color: rgba(242,234,214,.55); line-height: 1.6; margin: 2rem 0 2.5rem;
   padding-left: 1.5rem; border-left: 1px solid rgba(196,151,59,.3);
 }
 .dv-about-stats { display: grid; grid-template-columns: 1fr 1fr; margin-top: 3rem; border-top: 1px solid var(--dv-border); }
@@ -707,9 +707,9 @@
 .dv-footer-links a:hover { color: var(--dv-cream); }
 .dv-footer-bottom {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem;
-  font-size: .64rem; color: rgba(124,112,96,.65);
+  font-size: .64rem; color: var(--dv-muted);
 }
-.dv-footer-passion { font-family: var(--font-cormorant), serif; font-style: italic; font-size: .88rem; color: rgba(196,151,59,.55); }
+.dv-footer-passion { font-family: var(--font-cormorant), serif; font-style: italic; font-size: .88rem; color: rgba(196,151,59,.78); }
 
 /* responsive */
 @media (max-width: 1024px) {
