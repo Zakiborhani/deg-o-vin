@@ -158,18 +158,25 @@ export default function Home() {
     return () => { document.removeEventListener("mousemove", onMove); cancelAnimationFrame(rafId); };
   }, []);
 
-  /* scroll reveal */
+  /* scroll reveal — runs immediately, no loader dependency */
   useEffect(() => {
-    if (!loaded) return;
     const obs = new IntersectionObserver(
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
       }),
-      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
     );
-    document.querySelectorAll(".dv-reveal, .dv-clip-reveal").forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, [loaded]);
+    const els = document.querySelectorAll(".dv-reveal, .dv-clip-reveal");
+    els.forEach((el) => obs.observe(el));
+
+    /* hard fallback: if observer misses anything, reveal all after 2s */
+    const fallback = setTimeout(() => {
+      document.querySelectorAll(".dv-reveal:not(.visible), .dv-clip-reveal:not(.visible)")
+        .forEach((el) => el.classList.add("visible"));
+    }, 2000);
+
+    return () => { obs.disconnect(); clearTimeout(fallback); };
+  }, []);
 
   /* tab indicator */
   useEffect(() => {
