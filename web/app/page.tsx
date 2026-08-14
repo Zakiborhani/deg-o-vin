@@ -210,10 +210,11 @@ export default function Home() {
       <nav className={`dv-nav${scrolled ? " scrolled" : ""}`}>
         <a className="dv-nav-logo" href="#dv-hero">Deg <em>&amp;</em> Vin</a>
         <ul className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
-          <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
-          <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
           <li><a href="#dv-hours"   onClick={() => setMobileOpen(false)}>Öppettider</a></li>
+          <li><a href="#dv-find"    onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
+          <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
+          <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
           <li><a href="#dv-book"    onClick={() => setMobileOpen(false)}>Boka bord</a></li>
         </ul>
         <div className="dv-nav-btns">
@@ -266,45 +267,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-
-      {/* about */}
-      <section id="dv-about">
-        <div className="dv-about-grid">
-          <div className="dv-about-img-col dv-reveal">
-            <img
-              ref={aboutImgRef}
-              src="/images/82cc8b71-861d-40fa-99e9-fbe42f36017f.jfif"
-              alt="Deg & Vin ambiance"
-              loading="lazy"
-            />
-            <div className="dv-about-img-overlay" />
-            <div className="dv-about-badge dv-reveal dv-reveal-d2">
-              <strong>48h</strong>
-              <span>Surdeg<br/>Jäsning</span>
-            </div>
-          </div>
-          <div className="dv-about-text-col">
-            <div className="dv-section-label dv-reveal">Vår historia</div>
-            <h2 className="dv-section-title dv-reveal dv-reveal-d1">Passione per la<br/>Qualità Italiana</h2>
-            <div className="dv-gold-rule dv-reveal dv-reveal-d2" />
-            <p className="dv-section-body dv-reveal dv-reveal-d2">
-              Vi är ett pizzarestaurang i Stockholm med ett enkelt löfte: äkta napolitansk teknik
-              möter de bästa italienska råvarorna. Vår deg jäser i 48 timmar, toppingarna kommer
-              direkt från producenter med IGP- och DOP-certifieringar.
-            </p>
-            <blockquote className="dv-about-quote dv-reveal dv-reveal-d3">
-              Från Prosciutto di Parma 24 månader till Parmigiano-Reggiano 40 månader — varje
-              ingrediens är utvald med omsorg.
-            </blockquote>
-            <div className="dv-about-stats dv-reveal dv-reveal-d3">
-              <div className="dv-stat"><div className="dv-stat-num">48h</div><div className="dv-stat-label">Surdegsjäsning</div></div>
-              <div className="dv-stat"><div className="dv-stat-num">100%</div><div className="dv-stat-label">Italienska råvaror</div></div>
-              <div className="dv-stat"><div className="dv-stat-num">DOP</div><div className="dv-stat-label">Certifierade produkter</div></div>
-              <div className="dv-stat"><div className="dv-stat-num">IGP</div><div className="dv-stat-label">Skyddad ursprungsbeteckning</div></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* menu */}
       <section id="dv-menu" className="dv-section">
@@ -359,6 +321,128 @@ export default function Home() {
         </div>
       </section>
 
+      {/* hours */}
+      <section id="dv-hours" className="dv-section">
+        <div className="dv-hours-inner">
+          <div className="dv-hours-head dv-reveal">
+            <div className="dv-section-label center">Välkommen</div>
+            <h2 className="dv-section-title">Öppettider</h2>
+          </div>
+          <div className="dv-hours-grid dv-reveal dv-reveal-d1">
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Måndag – Torsdag</div>
+              <div className="dv-hours-time">kl. 11–21</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Fredag</div>
+              <div className="dv-hours-time">kl. 11–22</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Lördag</div>
+              <div className="dv-hours-time">kl. 12–22</div>
+            </div>
+            <div className="dv-hours-day">
+              <div className="dv-hours-day-name">Söndag</div>
+              <div className="dv-hours-time">kl. 12–21</div>
+            </div>
+          </div>
+          <div className="dv-hours-lunch dv-reveal dv-reveal-d2">
+            <div className="dv-hours-lunch-label">Dagligt erbjudande</div>
+            <div className="dv-hours-lunch-title">Luncherbjudande — 159 kr</div>
+            <div className="dv-hours-lunch-time">kl. 11–13</div>
+            <p className="dv-hours-lunch-desc">
+              Samtliga pizzor under 200 kr inkluderar läsk (ej San Pellegrino) och espresso!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* find us */}
+      <section id="dv-find" className="dv-section" style={{ padding: 0 }}>
+        <div className="dv-find-inner">
+          <div className="dv-find-map dv-clip-reveal">
+            <iframe
+              src="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Deg & Vin på kartan"
+            />
+          </div>
+          <div className="dv-find-info dv-reveal">
+            <div className="dv-section-label">Hitta oss</div>
+            <h2 className="dv-section-title">Välkommen till<br/>Deg &amp; Vin</h2>
+            <div className="dv-find-contact">
+              <div className="dv-find-item">
+                <span className="dv-find-item-label">Adress</span>
+                <span className="dv-find-item-value">
+                  <a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige" target="_blank" rel="noopener noreferrer">
+                    Spångavägen 309<br/>163 46 Bromma
+                  </a>
+                </span>
+              </div>
+              <div className="dv-find-item">
+                <span className="dv-find-item-label">Telefon</span>
+                <span className="dv-find-item-value">
+                  <a href="tel:+46737221125">+46 73-722 11 25</a>
+                </span>
+              </div>
+              <div className="dv-find-item">
+                <span className="dv-find-item-label">E-post</span>
+                <span className="dv-find-item-value">
+                  <a href="mailto:info@degovin.se">info@degovin.se</a>
+                </span>
+              </div>
+              <div className="dv-find-item">
+                <span className="dv-find-item-label">För grupper &amp; event</span>
+                <span className="dv-find-item-value" style={{ fontSize: ".85rem", fontFamily: "var(--font-montserrat)" }}>
+                  Kontakta oss via e-post i förväg för gruppreservationer och event.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* about */}
+      <section id="dv-about">
+        <div className="dv-about-grid">
+          <div className="dv-about-img-col dv-reveal">
+            <img
+              ref={aboutImgRef}
+              src="/images/82cc8b71-861d-40fa-99e9-fbe42f36017f.jfif"
+              alt="Deg & Vin ambiance"
+              loading="lazy"
+            />
+            <div className="dv-about-img-overlay" />
+            <div className="dv-about-badge dv-reveal dv-reveal-d2">
+              <strong>48h</strong>
+              <span>Surdeg<br/>Jäsning</span>
+            </div>
+          </div>
+          <div className="dv-about-text-col">
+            <div className="dv-section-label dv-reveal">Vår historia</div>
+            <h2 className="dv-section-title dv-reveal dv-reveal-d1">Passione per la<br/>Qualità Italiana</h2>
+            <div className="dv-gold-rule dv-reveal dv-reveal-d2" />
+            <p className="dv-section-body dv-reveal dv-reveal-d2">
+              Vi är ett pizzarestaurang i Stockholm med ett enkelt löfte: äkta napolitansk teknik
+              möter de bästa italienska råvarorna. Vår deg jäser i 48 timmar, toppingarna kommer
+              direkt från producenter med IGP- och DOP-certifieringar.
+            </p>
+            <blockquote className="dv-about-quote dv-reveal dv-reveal-d3">
+              Från Prosciutto di Parma 24 månader till Parmigiano-Reggiano 40 månader — varje
+              ingrediens är utvald med omsorg.
+            </blockquote>
+            <div className="dv-about-stats dv-reveal dv-reveal-d3">
+              <div className="dv-stat"><div className="dv-stat-num">48h</div><div className="dv-stat-label">Surdegsjäsning</div></div>
+              <div className="dv-stat"><div className="dv-stat-num">100%</div><div className="dv-stat-label">Italienska råvaror</div></div>
+              <div className="dv-stat"><div className="dv-stat-num">DOP</div><div className="dv-stat-label">Certifierade produkter</div></div>
+              <div className="dv-stat"><div className="dv-stat-num">IGP</div><div className="dv-stat-label">Skyddad ursprungsbeteckning</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* gallery */}
       <section id="dv-gallery" className="dv-section">
         <div className="dv-gallery-inner">
@@ -407,42 +491,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* hours */}
-      <section id="dv-hours" className="dv-section">
-        <div className="dv-hours-inner">
-          <div className="dv-hours-head dv-reveal">
-            <div className="dv-section-label center">Välkommen</div>
-            <h2 className="dv-section-title">Öppettider</h2>
-          </div>
-          <div className="dv-hours-grid dv-reveal dv-reveal-d1">
-            <div className="dv-hours-day">
-              <div className="dv-hours-day-name">Måndag – Torsdag</div>
-              <div className="dv-hours-time">kl. 11–21</div>
-            </div>
-            <div className="dv-hours-day">
-              <div className="dv-hours-day-name">Fredag</div>
-              <div className="dv-hours-time">kl. 11–22</div>
-            </div>
-            <div className="dv-hours-day">
-              <div className="dv-hours-day-name">Lördag</div>
-              <div className="dv-hours-time">kl. 12–22</div>
-            </div>
-            <div className="dv-hours-day">
-              <div className="dv-hours-day-name">Söndag</div>
-              <div className="dv-hours-time">kl. 12–21</div>
-            </div>
-          </div>
-          <div className="dv-hours-lunch dv-reveal dv-reveal-d2">
-            <div className="dv-hours-lunch-label">Dagligt erbjudande</div>
-            <div className="dv-hours-lunch-title">Luncherbjudande — 159 kr</div>
-            <div className="dv-hours-lunch-time">kl. 11–13</div>
-            <p className="dv-hours-lunch-desc">
-              Samtliga pizzor under 200 kr inkluderar läsk (ej San Pellegrino) och espresso!
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* book */}
       <section id="dv-book">
         <div className="dv-book-bg-text">Deg &amp; Vin</div>
@@ -470,15 +518,20 @@ export default function Home() {
             <div>
               <div className="dv-footer-logo">Deg <em>&amp;</em> Vin</div>
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
-              <p className="dv-footer-desc">Stockholm &middot; Surdeg 48h &middot; Italienska premiumvaror<br/>Tutto fatto con passione</p>
+              <p className="dv-footer-desc">
+                Spångavägen 309, 163 46 Bromma<br/>
+                <a href="tel:+46737221125" style={{ color: "inherit", textDecoration: "none" }}>+46 73-722 11 25</a><br/>
+                <a href="mailto:info@degovin.se" style={{ color: "inherit", textDecoration: "none" }}>info@degovin.se</a>
+              </p>
             </div>
             <div>
               <div className="dv-footer-h">Navigera</div>
               <ul className="dv-footer-links">
-                <li><a href="#dv-about">Om oss</a></li>
                 <li><a href="#dv-menu">Meny</a></li>
-                <li><a href="#dv-gallery">Galleri</a></li>
                 <li><a href="#dv-hours">Öppettider</a></li>
+                <li><a href="#dv-find">Hitta oss</a></li>
+                <li><a href="#dv-about">Om oss</a></li>
+                <li><a href="#dv-gallery">Galleri</a></li>
                 <li><a href="#dv-book">Boka bord</a></li>
               </ul>
             </div>
@@ -487,6 +540,7 @@ export default function Home() {
               <ul className="dv-footer-links">
                 <li><a href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online</a></li>
                 <li><a href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a></li>
+                <li><a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma" target="_blank" rel="noopener noreferrer">Vägbeskrivning</a></li>
               </ul>
             </div>
           </div>
