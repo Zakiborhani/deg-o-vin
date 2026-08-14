@@ -17,14 +17,15 @@ const ANTIPASTI = [
   { name: "Mandorla", price: "49 kr", desc: "Rostad mandelsmör, crackersbröd, siciliansk salt, evo olja, aceto balsamico IGP, basilika.", tags: ["veg"] },
   { name: "Burratina", price: "129 kr", desc: "Körsbärstomater, saffransolja, crackersbröd, siciliansk salt, evo olja, aceto balsamico IGP + Prosciutto di Parma 40 gr.", tags: [] },
   { name: "Peco & Zola", price: "89 kr", desc: "Gorgonzola eko rullad i Pecorino Romano. Rekommenderas med crackersbröd.", tags: ["veg"] },
-  { name: "Cerignola", price: "55 kr", desc: "Svarta oliver från Toscana.", tags: ["veg"] },
+  { name: "Cerignola", price: "55 kr", desc: "Gröna oliver från Toscana.", tags: ["veg"] },
+  { name: "EKO Taggiasche", price: "40 kr", desc: "Eko-odlade taggiasche oliver, evo olja.", tags: ["veg"] },
   { name: "Charcbricka Originale", price: "229 kr", desc: "För 2 pers. Salami, Prosciutto di Parma DOP, mozzarella di Bufala, tomater, Parmigiano-Reggiano, Pecorino, EKO oliver, hembakat bröd.", tags: [] },
   { name: "Rè Su Charcbricka", price: "319 kr", desc: "För 2 pers. Premium urval — kökets bästa val från charkuteriet.", tags: [] },
   { name: "Pane Aglio", price: "79 kr", desc: "Surdeg, tomatsalsa, sicilianskt saffransalt, evo olja.", tags: ["veg"] },
 ];
 
 const BIANCHE = [
-  { name: "Salmone", price: "239 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, allo santa (stark evo olja), basilika.", tags: ["bianca"] },
+  { name: "Salmone", price: "249 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, allo santa (stark evo olja), basilika.", tags: ["bianca"] },
   { name: "Carbonara", price: "189 kr", desc: "Fior di latte, knaprig guanciale, Pecorino-Romano, ägg, evo olja, svart pepper.", tags: ["bianca"] },
   { name: "Genovese", price: "249 kr", desc: "Fior di latte, krämig pesto Genovese med mandlar, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca", "veg"] },
   { name: "Prosciuttina", price: "219 kr", desc: "Parmigiano-Reggiano, mozzarella di Bufala, Prosciutto di Parma 24 mån lagrat, basilikum.", tags: ["bianca"] },
@@ -35,24 +36,26 @@ const BIANCHE = [
 const ROSSE = [
   { name: "Margherita", price: "159 kr", desc: "San Marzano-tomater, fior di latte mozzarella, evo olja, flinit, basilik.", tags: ["rossa", "veg"] },
   { name: "Peperoni", price: "179 kr", desc: "Fior di latte mozzarella, pepperoni salami, basilik.", tags: ["rossa"] },
+  { name: "Bambino", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, basilik.", tags: ["rossa"] },
   { name: "Marinara 2.0", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, premium anchovies (Slowfood), oregano, evo olja, basilik.", tags: ["rossa"] },
   { name: "Vegetariana", price: "199 kr", desc: "San Marzano-tomater, mozzarella, rostade champinjoner, körsbärstomater semidry, vitlök, taggiasche oliver, oregano, kronärtskocka, evo olja, basilik.", tags: ["rossa", "veg"] },
-  { name: "Bufala", price: "169 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilik.", tags: ["rossa"] },
+  { name: "Bufalina", price: "179 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilik.", tags: ["rossa"] },
   { name: "Diaovla", price: "169 kr", desc: "San Marzano-tomater, 'nduja (levabad salami från Spilinga), San Marzano piccante, fior di latte mozzarella, evo olja, basilik.", tags: ["rossa"] },
+  { name: "Capricciosa", price: "189 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, champinjoner, rostade kronärtskockor, basilik.", tags: ["rossa"] },
 ];
 
 const DESSERT = [
-  { name: "Choklad Tartufo", price: "30 kr", desc: "" },
+  { name: "Choklad Tartufo", price: "50 kr", desc: "" },
   { name: "Tiramisù Classico", price: "79 kr", desc: "Mascarpone med savoiardier, eko kakao." },
   { name: "Pizza Nutellina", price: "139 kr", desc: "Nocciolata, omsorgsfull, oemotståndlig." },
   { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffyl — kaffekräm, 3 cl grappa." },
 ];
 
 const EXTRAS = [
-  { name: "Tartufo", price: "40 kr", desc: "" },
+  { name: "Tartufo", price: "50 kr", desc: "" },
   { name: "Mozzarella di Bufala", price: "30 kr", desc: "" },
   { name: "Grönt / Ost", price: "30 kr", desc: "" },
-  { name: "Glutenfri botten", price: "50 kr", desc: "" },
+  { name: "Glutenfri botten", price: "40 kr", desc: "" },
 ];
 
 const TAG_LABELS: Record<string, string> = { new: "Nyhet", veg: "Veg", bianca: "Bianca", rossa: "Röd" };
