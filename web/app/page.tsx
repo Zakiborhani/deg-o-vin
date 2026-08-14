@@ -28,19 +28,19 @@ const BIANCHE = [
   { name: "Salmone", price: "249 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, allo santa (stark evo olja), basilika.", tags: ["bianca"] },
   { name: "Carbonara", price: "189 kr", desc: "Fior di latte, knaprig guanciale, Pecorino-Romano, ägg, evo olja, svart pepper.", tags: ["bianca"] },
   { name: "Genovese", price: "249 kr", desc: "Fior di latte, krämig pesto Genovese med mandlar, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca", "veg"] },
-  { name: "Prosciuttina", price: "219 kr", desc: "Parmigiano-Reggiano, mozzarella di Bufala, Prosciutto di Parma 24 mån lagrat, basilikum.", tags: ["bianca"] },
-  { name: "Tartufata", price: "239 kr", desc: "Pancetta (rökt salt), salsiccla (italiensk korv), champignon, fior di latte, tartufo tryffelkräm, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca"] },
+  { name: "Prosciuttina", price: "219 kr", desc: "Parmigiano-Reggiano, mozzarella di Bufala, Prosciutto di Parma 24 mån lagrat, basilika.", tags: ["bianca"] },
+  { name: "Tartufata", price: "239 kr", desc: "Pancetta (rökt salt), salsiccia (italiensk korv), champignon, fior di latte, tartufo tryffelkräm, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca"] },
   { name: "4 Formaggi", price: "189 kr", desc: "Fyra ostar, Parmigiano-Reggiano 30 mån, basilico, evo olja.", tags: ["bianca", "veg"] },
 ];
 
 const ROSSE = [
-  { name: "Margherita", price: "159 kr", desc: "San Marzano-tomater, fior di latte mozzarella, evo olja, flinit, basilik.", tags: ["rossa", "veg"] },
+  { name: "Margherita", price: "159 kr", desc: "San Marzano-tomater, fior di latte mozzarella, evo olja, flingsalt, basilika.", tags: ["rossa", "veg"] },
   { name: "Peperoni", price: "179 kr", desc: "Fior di latte mozzarella, pepperoni salami, basilik.", tags: ["rossa"] },
   { name: "Bambino", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, basilik.", tags: ["rossa"] },
   { name: "Marinara 2.0", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, premium anchovies (Slowfood), oregano, evo olja, basilik.", tags: ["rossa"] },
   { name: "Vegetariana", price: "199 kr", desc: "San Marzano-tomater, mozzarella, rostade champinjoner, körsbärstomater semidry, vitlök, taggiasche oliver, oregano, kronärtskocka, evo olja, basilik.", tags: ["rossa", "veg"] },
   { name: "Bufalina", price: "179 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilik.", tags: ["rossa"] },
-  { name: "Diaovla", price: "169 kr", desc: "San Marzano-tomater, 'nduja (levabad salami från Spilinga), San Marzano piccante, fior di latte mozzarella, evo olja, basilik.", tags: ["rossa"] },
+  { name: "Diavola", price: "169 kr", desc: "San Marzano-tomater, 'nduja (mjuk kryddig salami från Spilinga), San Marzano piccante, fior di latte mozzarella, evo olja, basilika.", tags: ["rossa"] },
   { name: "Capricciosa", price: "189 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, champinjoner, rostade kronärtskockor, basilik.", tags: ["rossa"] },
 ];
 
@@ -48,7 +48,7 @@ const DESSERT = [
   { name: "Choklad Tartufo", price: "50 kr", desc: "" },
   { name: "Tiramisù Classico", price: "79 kr", desc: "Mascarpone med savoiardier, eko kakao." },
   { name: "Pizza Nutellina", price: "139 kr", desc: "Nocciolata, omsorgsfull, oemotståndlig." },
-  { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffyl — kaffekräm, 3 cl grappa." },
+  { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffel — kaffekräm, 3 cl grappa." },
 ];
 
 const EXTRAS = [

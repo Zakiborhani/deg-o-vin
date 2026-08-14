@@ -511,7 +511,7 @@
 .dv-menu-item-price { font-family: var(--font-playfair), serif; font-size: .98rem; font-weight: 600; color: var(--dv-gold); white-space: nowrap; flex-shrink: 0; }
 .dv-menu-item-desc { font-size: .76rem; color: var(--dv-muted); line-height: 1.7; }
 .dv-menu-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .2rem; }
-.dv-tag { font-size: .5rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .18rem .55rem; }
+.dv-tag { font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .18rem .55rem; }
 .dv-tag-veg   { background: rgba(80,140,80,.15); color: #7DC87D; border: 1px solid rgba(80,140,80,.25); }
 .dv-tag-bianca{ background: rgba(196,151,59,.1);  color: var(--dv-gold-lt); border: 1px solid rgba(196,151,59,.2); }
 .dv-tag-rossa { background: rgba(180,60,60,.15);  color: #E07070; border: 1px solid rgba(180,60,60,.25); }
@@ -683,7 +683,7 @@
 .dv-footer-find-name em { color: var(--dv-gold); font-style: italic; }
 .dv-footer-find-items { display: flex; flex-direction: column; gap: 1.1rem; }
 .dv-footer-find-item { display: flex; flex-direction: column; gap: .25rem; }
-.dv-footer-find-label { font-size: .52rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--dv-gold); }
+.dv-footer-find-label { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--dv-gold); }
 .dv-footer-find-info a { font-size: .78rem; color: var(--dv-muted); text-decoration: none; line-height: 1.7; transition: color .25s; }
 .dv-footer-find-info a:hover { color: var(--dv-cream); }
 .dv-footer-find-note { font-size: .72rem; color: var(--dv-muted); line-height: 1.7; font-family: var(--font-montserrat), sans-serif; }
@@ -704,9 +704,9 @@
 .dv-footer-links a:hover { color: var(--dv-cream); }
 .dv-footer-bottom {
   display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .8rem;
-  font-size: .64rem; color: rgba(124,112,96,.4);
+  font-size: .64rem; color: rgba(124,112,96,.65);
 }
-.dv-footer-passion { font-family: var(--font-cormorant), serif; font-style: italic; font-size: .88rem; color: rgba(196,151,59,.35); }
+.dv-footer-passion { font-family: var(--font-cormorant), serif; font-style: italic; font-size: .88rem; color: rgba(196,151,59,.55); }
 
 /* responsive */
 @media (max-width: 1024px) {
