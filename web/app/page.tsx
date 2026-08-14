@@ -219,7 +219,7 @@ export default function Home() {
         <ul className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
           <li><a href="#dv-hours"   onClick={() => setMobileOpen(false)}>Öppettider</a></li>
-          <li><a href="#dv-find"    onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
+          <li><a href="#dv-footer"  onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
           <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
           <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
           <li><a href="#dv-book"    onClick={() => setMobileOpen(false)}>Boka bord</a></li>
@@ -364,53 +364,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* find us */}
-      <section id="dv-find" className="dv-section" style={{ padding: 0 }}>
-        <div className="dv-find-inner">
-          <div className="dv-find-map dv-clip-reveal">
-            <iframe
-              src="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Deg & Vin på kartan"
-            />
-          </div>
-          <div className="dv-find-info dv-reveal">
-            <div className="dv-section-label">Hitta oss</div>
-            <h2 className="dv-section-title">Välkommen till<br/>Deg &amp; Vin</h2>
-            <div className="dv-find-contact">
-              <div className="dv-find-item">
-                <span className="dv-find-item-label">Adress</span>
-                <span className="dv-find-item-value">
-                  <a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige" target="_blank" rel="noopener noreferrer">
-                    Spångavägen 309<br/>163 46 Bromma
-                  </a>
-                </span>
-              </div>
-              <div className="dv-find-item">
-                <span className="dv-find-item-label">Telefon</span>
-                <span className="dv-find-item-value">
-                  <a href="tel:+46737221125">+46 73-722 11 25</a>
-                </span>
-              </div>
-              <div className="dv-find-item">
-                <span className="dv-find-item-label">E-post</span>
-                <span className="dv-find-item-value">
-                  <a href="mailto:info@degovin.se">info@degovin.se</a>
-                </span>
-              </div>
-              <div className="dv-find-item">
-                <span className="dv-find-item-label">För grupper &amp; event</span>
-                <span className="dv-find-item-value" style={{ fontSize: ".85rem", fontFamily: "var(--font-montserrat)" }}>
-                  Kontakta oss via e-post i förväg för gruppreservationer och event.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* about */}
       <section id="dv-about">
         <div className="dv-about-grid">
@@ -519,24 +472,58 @@ export default function Home() {
       </section>
 
       {/* footer */}
-      <footer className="dv-footer">
+      <footer id="dv-footer" className="dv-footer">
         <div className="dv-footer-inner">
+
+          {/* hitta oss strip */}
+          <div className="dv-footer-find">
+            <div className="dv-footer-find-map">
+              <iframe
+                src="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Deg & Vin på kartan"
+              />
+            </div>
+            <div className="dv-footer-find-info">
+              <div className="dv-footer-h">Hitta oss</div>
+              <div className="dv-footer-find-name">Deg <em>&amp;</em> Vin</div>
+              <div className="dv-footer-find-items">
+                <div className="dv-footer-find-item">
+                  <span className="dv-footer-find-label">Adress</span>
+                  <a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige" target="_blank" rel="noopener noreferrer">
+                    Spångavägen 309, 163 46 Bromma
+                  </a>
+                </div>
+                <div className="dv-footer-find-item">
+                  <span className="dv-footer-find-label">Telefon</span>
+                  <a href="tel:+46737221125">+46 73-722 11 25</a>
+                </div>
+                <div className="dv-footer-find-item">
+                  <span className="dv-footer-find-label">E-post</span>
+                  <a href="mailto:info@degovin.se">info@degovin.se</a>
+                </div>
+                <div className="dv-footer-find-item">
+                  <span className="dv-footer-find-label">För grupper &amp; event</span>
+                  <span className="dv-footer-find-note">Kontakta oss via e-post för gruppreservationer och event.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="dv-footer-divider" />
+
           <div className="dv-footer-top">
             <div>
               <div className="dv-footer-logo">Deg <em>&amp;</em> Vin</div>
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
-              <p className="dv-footer-desc">
-                Spångavägen 309, 163 46 Bromma<br/>
-                <a href="tel:+46737221125" style={{ color: "inherit", textDecoration: "none" }}>+46 73-722 11 25</a><br/>
-                <a href="mailto:info@degovin.se" style={{ color: "inherit", textDecoration: "none" }}>info@degovin.se</a>
-              </p>
             </div>
             <div>
               <div className="dv-footer-h">Navigera</div>
               <ul className="dv-footer-links">
                 <li><a href="#dv-menu">Meny</a></li>
                 <li><a href="#dv-hours">Öppettider</a></li>
-                <li><a href="#dv-find">Hitta oss</a></li>
                 <li><a href="#dv-about">Om oss</a></li>
                 <li><a href="#dv-gallery">Galleri</a></li>
                 <li><a href="#dv-book">Boka bord</a></li>
