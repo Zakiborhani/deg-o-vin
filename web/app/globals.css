@@ -373,7 +373,7 @@
   opacity: 0; animation: dvWordUp .7s var(--dv-ease) 1.2s forwards;
 }
 .dv-hero-scroll {
-  position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%); z-index: 2;
+  position: absolute; bottom: 2.2rem; left: 0; right: 0; margin: 0 auto; width: fit-content; z-index: 2;
   display: flex; flex-direction: column; align-items: center; gap: .6rem;
   opacity: 0; animation: dvWordUp .6s ease 1.6s forwards;
 }
