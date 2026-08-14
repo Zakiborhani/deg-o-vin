@@ -737,4 +737,10 @@
   .dv-footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
   .dv-nav { padding: 0 5vw; }
   .dv-hero-title { font-size: clamp(3.2rem, 14vw, 5.5rem); }
+  .dv-tab-bar {
+    justify-content: flex-start; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; margin-left: -5vw; margin-right: -5vw; padding: 0 5vw;
+  }
+  .dv-tab-bar::-webkit-scrollbar { display: none; }
+  .dv-menu-tab { padding: .95rem 1.2rem; }
 }
