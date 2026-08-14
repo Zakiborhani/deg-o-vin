@@ -256,7 +256,7 @@ export default function Home() {
           <div className="dv-hero-rule" />
           <p className="dv-hero-sub">Pizza Contemporanea Italiana</p>
           <div className="dv-hero-actions">
-            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ nu</a>
+            <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://degovin.orderyoyo.com/"   target="_blank" rel="noopener noreferrer">Beställ online</a>
             <a className="dv-btn dv-btn-outline dv-btn-lg" href="#dv-menu">Se menyn</a>
           </div>
         </div>
