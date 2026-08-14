@@ -521,6 +521,10 @@
 .dv-tag-new   { background: var(--dv-gold); color: #09080a; border: none; }
 .dv-menu-note { text-align: center; margin-top: 3rem; font-family: var(--font-cormorant), serif; font-size: 1rem; font-style: italic; color: var(--dv-muted); }
 .dv-extras-label { font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--dv-gold); margin: 2.5rem 0 1.2rem; }
+.dv-extras-label:first-child { margin-top: 0; }
+.dv-wine-meta { font-size: .68rem; color: var(--dv-gold-lt); letter-spacing: .02em; }
+.dv-wine-grapes { font-size: .72rem; color: var(--dv-muted); font-style: italic; }
+.dv-wine-special { font-size: .68rem; color: var(--dv-muted); opacity: .75; font-style: italic; line-height: 1.5; }
 
 /* gallery */
 #dv-gallery { background: var(--dv-bg2); }
