@@ -163,6 +163,7 @@
   --dv-cream:    #F2EAD6;
   --dv-text:     #E8DFC8;
   --dv-muted:    #8A7E6E;
+  --dv-desc:     #B7AB98;
   --dv-border:   #242017;
   --dv-ease:     cubic-bezier(.76,0,.24,1);
   --dv-ease2:    cubic-bezier(.34,1.56,.64,1);
@@ -529,19 +530,19 @@
 .dv-menu-item-top { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
 .dv-menu-item-name { font-family: var(--font-playfair), serif; font-size: 1.08rem; font-weight: 600; color: var(--dv-cream); }
 .dv-menu-item-price { font-family: var(--font-playfair), serif; font-size: .98rem; font-weight: 600; color: var(--dv-gold); white-space: nowrap; flex-shrink: 0; }
-.dv-menu-item-desc { font-size: .76rem; color: var(--dv-muted); line-height: 1.7; }
+.dv-menu-item-desc { font-size: .82rem; color: var(--dv-desc); line-height: 1.7; }
 .dv-menu-tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .2rem; }
 .dv-tag { font-size: .58rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .18rem .55rem; }
 .dv-tag-veg   { background: rgba(80,140,80,.15); color: #7DC87D; border: 1px solid rgba(80,140,80,.25); }
 .dv-tag-bianca{ background: rgba(196,151,59,.1);  color: var(--dv-gold-lt); border: 1px solid rgba(196,151,59,.2); }
 .dv-tag-rossa { background: rgba(180,60,60,.15);  color: #E07070; border: 1px solid rgba(180,60,60,.25); }
 .dv-tag-new   { background: var(--dv-gold); color: #09080a; border: none; }
-.dv-menu-note { text-align: center; margin-top: 3rem; font-family: var(--font-cormorant), serif; font-size: 1rem; font-style: italic; color: var(--dv-muted); }
+.dv-menu-note { text-align: center; margin-top: 3rem; font-family: var(--font-cormorant), serif; font-size: 1rem; font-style: italic; color: var(--dv-desc); }
 .dv-extras-label { font-size: .68rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--dv-gold); margin: 2.5rem 0 1.2rem; }
 .dv-extras-label:first-child { margin-top: 0; }
 .dv-wine-meta { font-size: .68rem; color: var(--dv-gold-lt); letter-spacing: .02em; }
-.dv-wine-grapes { font-size: .72rem; color: var(--dv-muted); font-style: italic; }
-.dv-wine-special { font-size: .68rem; color: var(--dv-muted); opacity: .75; font-style: italic; line-height: 1.5; }
+.dv-wine-grapes { font-size: .78rem; color: var(--dv-desc); font-style: italic; }
+.dv-wine-special { font-size: .74rem; color: var(--dv-desc); font-style: italic; line-height: 1.5; }
 
 /* gallery */
 #dv-gallery { background: var(--dv-bg2); }
