@@ -332,7 +332,7 @@ export default function Home() {
           preload="auto"
           poster="/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif"
         >
-          <source src="/videos/pizza-oven-hero.webm" type="video/webm" />
+          <source src="/videos/pizza-oven-hero.mp4" type="video/mp4" />
         </video>
         <div className="dv-hero-vignette" />
         <div className="dv-hero-line-l" />
