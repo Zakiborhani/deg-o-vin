@@ -241,13 +241,24 @@
     .hero-bg {
       position: absolute;
       inset: -10%;
-      background: url('Images/f96e6614-0744-493d-9b21-acad6459e30f.jfif') center/cover no-repeat;
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
       will-change: transform;
       transform: scale(1.12);
       filter: brightness(.72) contrast(1.08) saturate(.85);
-      transition: transform 9s cubic-bezier(.25,.46,.45,.94);
+      transition: transform 1.4s cubic-bezier(.25,.46,.45,.94);
+      --hero-ty: 0px;
     }
-    .hero-bg.loaded { transform: scale(1.03); }
+    .hero-bg.loaded {
+      transform: scale(1.03) translateY(var(--hero-ty));
+      animation: heroZoom 20s ease-in-out .4s infinite;
+    }
+    @keyframes heroZoom {
+      0%   { transform: scale(1.03) translateY(var(--hero-ty)); animation-timing-function: ease-in; }
+      80%  { transform: scale(1.17) translateY(var(--hero-ty)); animation-timing-function: ease-out; }
+      100% { transform: scale(1.03) translateY(var(--hero-ty)); }
+    }
     .hero-vignette {
       position: absolute;
       inset: 0;
@@ -985,7 +996,9 @@
 
 <!-- ─── HERO ─── -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <video class="hero-bg" id="heroBg" autoplay muted loop playsinline preload="auto" poster="Images/f96e6614-0744-493d-9b21-acad6459e30f.jfif">
+    <source src="Videos/pizza-oven-hero.webm" type="video/webm">
+  </video>
   <div class="hero-vignette"></div>
   <div class="hero-line-l"></div>
   <div class="hero-line-r"></div>
@@ -1285,7 +1298,7 @@
   setTimeout(() => heroBg.classList.add('loaded'), 150);
   window.addEventListener('scroll', () => {
     if (window.scrollY < window.innerHeight * 1.2)
-      heroBg.style.transform = `scale(1.03) translateY(${window.scrollY * .28}px)`;
+      heroBg.style.setProperty('--hero-ty', `${window.scrollY * .28}px`);
   }, { passive: true });
 
   /* ── ABOUT IMG KEN BURNS ── */

@@ -315,12 +315,22 @@
 }
 .dv-hero-bg {
   position: absolute; inset: -10%;
-  background: url('/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif') center/cover no-repeat;
+  width: 120%; height: 120%;
+  object-fit: cover;
   will-change: transform; transform: scale(1.12);
   filter: brightness(.72) contrast(1.08) saturate(.85);
-  transition: transform 9s cubic-bezier(.25,.46,.45,.94);
+  transition: transform 1.4s cubic-bezier(.25,.46,.45,.94);
+  --dv-hero-ty: 0px;
 }
-.dv-hero-bg.loaded { transform: scale(1.03); }
+.dv-hero-bg.loaded {
+  transform: scale(1.03) translateY(var(--dv-hero-ty));
+  animation: dv-hero-zoom 20s ease-in-out .4s infinite;
+}
+@keyframes dv-hero-zoom {
+  0%   { transform: scale(1.03) translateY(var(--dv-hero-ty)); animation-timing-function: ease-in; }
+  80%  { transform: scale(1.17) translateY(var(--dv-hero-ty)); animation-timing-function: ease-out; }
+  100% { transform: scale(1.03) translateY(var(--dv-hero-ty)); }
+}
 .dv-hero-vignette {
   position: absolute; inset: 0;
   background:

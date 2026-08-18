@@ -166,7 +166,7 @@ export default function Home() {
   const [mobileOpen,    setMobileOpen]    = useState(false);
   const [tabsScrolled,  setTabsScrolled]  = useState(false);
 
-  const heroBgRef    = useRef<HTMLDivElement>(null);
+  const heroBgRef    = useRef<HTMLVideoElement>(null);
   const aboutImgRef  = useRef<HTMLImageElement>(null);
   const dotRef       = useRef<HTMLDivElement>(null);
   const ringRef      = useRef<HTMLDivElement>(null);
@@ -202,7 +202,7 @@ export default function Home() {
     const onScroll = () => {
       setScrolled(window.scrollY > 70);
       if (heroBgRef.current && window.scrollY < window.innerHeight * 1.2) {
-        heroBgRef.current.style.transform = `scale(1.03) translateY(${window.scrollY * 0.28}px)`;
+        heroBgRef.current.style.setProperty("--dv-hero-ty", `${window.scrollY * 0.28}px`);
       }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -322,7 +322,18 @@ export default function Home() {
 
       {/* hero */}
       <section id="dv-hero">
-        <div className="dv-hero-bg" ref={heroBgRef} />
+        <video
+          className="dv-hero-bg"
+          ref={heroBgRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif"
+        >
+          <source src="/videos/pizza-oven-hero.webm" type="video/webm" />
+        </video>
         <div className="dv-hero-vignette" />
         <div className="dv-hero-line-l" />
         <div className="dv-hero-line-r" />
