@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const MARQUEE_ITEMS = [
@@ -56,6 +57,14 @@ const EXTRAS = [
   { name: "Mozzarella di Bufala", price: "30 kr", desc: "" },
   { name: "Grönt / Ost", price: "30 kr", desc: "" },
   { name: "Glutenfri botten", price: "40 kr", desc: "" },
+];
+
+const GALLERY_ITEMS = [
+  { src: "/images/gallery/surdeg-handknadad.jpg", alt: "Handknådad surdeg", caption: "Surdeg, formad för hand", ratio: 1.35, position: "center 55%" },
+  { src: "/images/gallery/vin-charkuteri.jpg", alt: "Vin och charkuteribricka", caption: "Vin och charkuteri, valda med omsorg", ratio: 1.05, position: "center" },
+  { src: "/images/gallery/mozzarella-fardsk.jpg", alt: "Färsk mozzarella", caption: "Färsk mozzarella, varje dag", ratio: 0.78, position: "center" },
+  { src: "/images/gallery/margherita-detalj.jpg", alt: "Nygräddad pizza margherita i närbild", caption: "Krispig, luftig, 48 timmar värd", ratio: 0.95, position: "center" },
+  { src: "/images/gallery/pizza-fran-ugnen.jpg", alt: "Pizza serveras från ugnen", caption: "Rakt från ugnen till bordet", ratio: 0.92, position: "center 40%" },
 ];
 
 const TAG_LABELS: Record<string, string> = { new: "Nyhet", veg: "Veg", bianca: "Bianca", rossa: "Röd" };
@@ -163,6 +172,7 @@ export default function Home() {
   const [scrolled,    setScrolled]   = useState(false);
   const [loaded,      setLoaded]     = useState(false);
   const [activeTab,     setActiveTab]     = useState("antipasti");
+  const [wineFilter,    setWineFilter]    = useState("all");
   const [mobileOpen,    setMobileOpen]    = useState(false);
   const [tabsScrolled,  setTabsScrolled]  = useState(false);
 
@@ -173,6 +183,8 @@ export default function Home() {
   const tabBarRef    = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const loaderRef    = useRef<HTMLDivElement>(null);
+  const filmstripRef = useRef<HTMLDivElement>(null);
+  const filmFillRef  = useRef<HTMLDivElement>(null);
 
   /* loader */
   useEffect(() => {
@@ -270,6 +282,33 @@ export default function Home() {
     return () => bar.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* filmstrip: gold reel-progress line + let the vertical wheel drive horizontal scroll */
+  useEffect(() => {
+    const strip = filmstripRef.current;
+    const fill  = filmFillRef.current;
+    if (!strip || !fill) return;
+    const onScroll = () => {
+      const max = strip.scrollWidth - strip.clientWidth;
+      const pct = max > 0 ? (strip.scrollLeft / max) * 100 : 0;
+      fill.style.width = pct + "%";
+    };
+    const onWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      const max = strip.scrollWidth - strip.clientWidth;
+      const next = strip.scrollLeft + e.deltaY;
+      if (next < 0 || next > max) return; // let the page take over once the strip hits an edge
+      strip.scrollLeft = next;
+      e.preventDefault();
+    };
+    onScroll();
+    strip.addEventListener("scroll", onScroll, { passive: true });
+    strip.addEventListener("wheel", onWheel, { passive: false });
+    return () => {
+      strip.removeEventListener("scroll", onScroll);
+      strip.removeEventListener("wheel", onWheel);
+    };
+  }, []);
+
   return (
     <div
       className="dv-root"
@@ -278,7 +317,6 @@ export default function Home() {
         color: "var(--dv-text)",
         fontFamily: "var(--font-montserrat), system-ui, sans-serif",
         overflowX: "hidden",
-        cursor: "none",
       }}
     >
       {/* cursor */}
@@ -295,9 +333,9 @@ export default function Home() {
       {/* nav */}
       <nav className={`dv-nav${scrolled ? " scrolled" : ""}`}>
         <a className="dv-nav-logo" href="#dv-hero">
-          <img src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" />
+          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={300} height={295} priority />
         </a>
-        <ul className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
+        <ul id="dv-nav-links" className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
           <li><a href="#dv-hours"   onClick={() => setMobileOpen(false)}>Öppettider</a></li>
           <li><a href="#dv-footer"  onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
@@ -306,12 +344,14 @@ export default function Home() {
           <li><a href="#dv-book"    onClick={() => setMobileOpen(false)}>Boka bord</a></li>
         </ul>
         <div className="dv-nav-btns">
-          <a className="dv-btn dv-btn-outline" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
+          <a className="dv-btn dv-btn-outline" href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a>
           <a className="dv-btn dv-btn-gold"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a>
         </div>
         <button
           className="dv-hamburger"
-          aria-label="Meny"
+          aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
+          aria-expanded={mobileOpen}
+          aria-controls="dv-nav-links"
           onClick={() => setMobileOpen((o) => !o)}
         >
           <span style={{ transform: mobileOpen ? "rotate(45deg) translate(4px,5px)" : undefined }} />
@@ -332,6 +372,7 @@ export default function Home() {
           preload="auto"
           poster="/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif"
         >
+          <source src="/videos/pizza-oven-hero.webm" type="video/webm" />
           <source src="/videos/pizza-oven-hero.mp4" type="video/mp4" />
         </video>
         <div className="dv-hero-vignette" />
@@ -347,7 +388,7 @@ export default function Home() {
           <p className="dv-hero-sub">Pizza Contemporanea Italiana</p>
           <div className="dv-hero-actions">
             <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a>
-            <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
+            <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a>
           </div>
         </div>
         <div className="dv-hero-scroll">
@@ -403,7 +444,24 @@ export default function Home() {
             <div key={tab.key} className={`dv-menu-panel${activeTab === tab.key ? " active" : ""}`}>
               {tab.key === "vin" ? (
                 <>
-                  {WINE_GROUPS.map((group) => (
+                  <div className="dv-wine-filters">
+                    <button
+                      className={`dv-wine-filter-chip${wineFilter === "all" ? " active" : ""}`}
+                      onClick={() => setWineFilter("all")}
+                    >
+                      Alla
+                    </button>
+                    {WINE_GROUPS.map((group) => (
+                      <button
+                        key={group.key}
+                        className={`dv-wine-filter-chip${wineFilter === group.key ? " active" : ""}`}
+                        onClick={() => setWineFilter(group.key)}
+                      >
+                        {group.label}
+                      </button>
+                    ))}
+                  </div>
+                  {WINE_GROUPS.filter((group) => wineFilter === "all" || wineFilter === group.key).map((group) => (
                     <div key={group.key}>
                       <p className="dv-extras-label">{group.label}</p>
                       <div className="dv-menu-grid">
@@ -487,11 +545,12 @@ export default function Home() {
       <section id="dv-about">
         <div className="dv-about-grid">
           <div className="dv-about-img-col dv-reveal">
-            <img
+            <Image
               ref={aboutImgRef}
               src="/images/82cc8b71-861d-40fa-99e9-fbe42f36017f.jfif"
               alt="Deg & Vin ambiance"
-              loading="lazy"
+              fill
+              sizes="(max-width: 860px) 100vw, 50vw"
             />
             <div className="dv-about-img-overlay" />
             <div className="dv-about-badge dv-reveal dv-reveal-d2">
@@ -529,18 +588,24 @@ export default function Home() {
             <div className="dv-section-label">Galleri</div>
             <h2 className="dv-section-title">Upplev Deg &amp; Vin</h2>
           </div>
-          <div className="dv-gallery-grid">
-            <div className="dv-g-item large dv-clip-reveal">
-              <img src="/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif" alt="Deg & Vin ambiance" loading="lazy" />
-              <div className="dv-g-overlay"><p className="dv-g-caption">Pizza Contemporanea Italiana</p></div>
+          <div className="dv-filmstrip-wrap">
+            <div className="dv-filmstrip" ref={filmstripRef} role="region" aria-label="Bildgalleri" tabIndex={0}>
+              {GALLERY_ITEMS.map((item, i) => (
+                <div key={item.src} className="dv-g-item dv-clip-reveal" style={{ aspectRatio: item.ratio, transitionDelay: `${i * .08}s` }}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 860px) 70vw, 34vw"
+                    style={{ objectPosition: item.position }}
+                  />
+                  <div className="dv-g-overlay"><p className="dv-g-caption">{item.caption}</p></div>
+                </div>
+              ))}
             </div>
-            <div className="dv-g-item dv-clip-reveal" style={{ transitionDelay: ".15s" }}>
-              <img src="/images/82cc8b71-861d-40fa-99e9-fbe42f36017f.jfif" alt="Deg & Vin pizza" loading="lazy" />
-              <div className="dv-g-overlay"><p className="dv-g-caption">Äkta råvaror, äkta smak</p></div>
-            </div>
-            <div className="dv-g-item dv-clip-reveal" style={{ transitionDelay: ".3s" }}>
-              <img src="/images/8b888fef-c08e-4068-9f2e-25297a130055.jfif" alt="Deg & Vin interiör" loading="lazy" />
-              <div className="dv-g-overlay"><p className="dv-g-caption">Surdeg 48 timmar</p></div>
+            <div className="dv-filmstrip-fade" aria-hidden="true" />
+            <div className="dv-filmstrip-track">
+              <div className="dv-filmstrip-fill" ref={filmFillRef} />
             </div>
           </div>
         </div>
@@ -585,7 +650,7 @@ export default function Home() {
           </p>
           <div className="dv-book-actions">
             <a className="dv-btn dv-btn-gold dv-btn-lg"    href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online &rarr;</a>
-            <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a>
+            <a className="dv-btn dv-btn-outline dv-btn-lg" href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a>
           </div>
         </div>
       </section>
@@ -607,7 +672,7 @@ export default function Home() {
             </div>
             <div className="dv-footer-find-info">
               <div className="dv-footer-h">Hitta oss</div>
-              <img src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" />
+              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={300} height={295} />
               <div className="dv-footer-find-items">
                 <div className="dv-footer-find-item">
                   <span className="dv-footer-find-label">Adress</span>
@@ -635,7 +700,7 @@ export default function Home() {
 
           <div className="dv-footer-top">
             <div>
-              <img src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" />
+              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={300} height={295} />
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
             </div>
             <div>
@@ -652,7 +717,7 @@ export default function Home() {
               <div className="dv-footer-h">Besök oss</div>
               <ul className="dv-footer-links">
                 <li><a href="https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order"   target="_blank" rel="noopener noreferrer">Beställ online</a></li>
-                <li><a href="https://degovin.se/book-a-table/" target="_blank" rel="noopener noreferrer">Boka bord</a></li>
+                <li><a href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a></li>
                 <li><a href="https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma" target="_blank" rel="noopener noreferrer">Vägbeskrivning</a></li>
               </ul>
             </div>
