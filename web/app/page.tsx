@@ -21,7 +21,7 @@ const ANTIPASTI = [
   { name: "Cerignola", price: "55 kr", desc: "Gröna oliver från Toscana.", tags: ["veg"] },
   { name: "EKO Taggiasche", price: "40 kr", desc: "Eko-odlade taggiasche oliver, evo olja.", tags: ["veg"] },
   { name: "Charcbricka Originale", price: "229 kr", desc: "För 2 pers. Salami, Prosciutto di Parma DOP, mozzarella di Bufala, tomater, Parmigiano-Reggiano, Pecorino, EKO oliver, hembakat bröd.", tags: [] },
-  { name: "Rè Su Charcbricka", price: "319 kr", desc: "För 2 pers. Premium urval — kökets bästa val från charkuteriet.", tags: [] },
+  { name: "Rè Su Charcbricka", price: "319 kr", desc: "För 2 pers. Premium urval, kökets bästa val från charkuteriet.", tags: [] },
   { name: "Pane Aglio", price: "79 kr", desc: "Surdeg, tomatsalsa, sicilianskt saffransalt, evo olja.", tags: ["veg"] },
 ];
 
@@ -49,7 +49,7 @@ const DESSERT = [
   { name: "Choklad Tartufo", price: "50 kr", desc: "" },
   { name: "Tiramisù Classico", price: "79 kr", desc: "Mascarpone med savoiardier, eko kakao." },
   { name: "Pizza Nutellina", price: "139 kr", desc: "Nocciolata, omsorgsfull, oemotståndlig." },
-  { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffel — kaffekräm, 3 cl grappa." },
+  { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffel. Kaffekräm, 3 cl grappa." },
 ];
 
 const EXTRAS = [
@@ -531,7 +531,7 @@ export default function Home() {
           </div>
           <div className="dv-hours-lunch dv-reveal dv-reveal-d2">
             <div className="dv-hours-lunch-label">Dagligt erbjudande</div>
-            <div className="dv-hours-lunch-title">Luncherbjudande — 159 kr</div>
+            <div className="dv-hours-lunch-title">Luncherbjudande, 159 kr</div>
             <div className="dv-hours-lunch-time">kl. 11–13</div>
             <p className="dv-hours-lunch-desc">
               Samtliga pizzor under 200 kr inkluderar läsk (ej San Pellegrino) och espresso!
@@ -567,8 +567,8 @@ export default function Home() {
               direkt från producenter med IGP- och DOP-certifieringar.
             </p>
             <blockquote className="dv-about-quote dv-reveal dv-reveal-d3">
-              Från Prosciutto di Parma 24 månader till Parmigiano-Reggiano 40 månader — varje
-              ingrediens är utvald med omsorg.
+              Från Prosciutto di Parma 24 månader till Parmigiano-Reggiano 40 månader.
+              Varje ingrediens är utvald med omsorg.
             </blockquote>
             <div className="dv-about-stats dv-reveal dv-reveal-d3">
               <div className="dv-stat"><div className="dv-stat-num">48h</div><div className="dv-stat-label">Surdegsjäsning</div></div>
@@ -617,13 +617,13 @@ export default function Home() {
             <div className="dv-pillar-num">48h</div>
             <div className="dv-pillar-line" />
             <div className="dv-pillar-title">Surdeg med tålamod</div>
-            <p className="dv-pillar-desc">Vår deg jäser i 48 timmar för maximal smak, luftighet och lättsmälthet. Ingen genväg — bara passion.</p>
+            <p className="dv-pillar-desc">Vår deg jäser i 48 timmar för maximal smak, luftighet och lättsmälthet. Ingen genväg, bara passion.</p>
           </div>
           <div className="dv-pillar dv-reveal dv-reveal-d2">
             <div className="dv-pillar-num">DOP</div>
             <div className="dv-pillar-line" />
             <div className="dv-pillar-title">Äkta italienska råvaror</div>
-            <p className="dv-pillar-desc">Prosciutto di Parma, Parmigiano-Reggiano, mozzarella di Bufala och San Marzano-tomater — direkt från producenten.</p>
+            <p className="dv-pillar-desc">Prosciutto di Parma, Parmigiano-Reggiano, mozzarella di Bufala och San Marzano-tomater, direkt från producenten.</p>
           </div>
           <div className="dv-pillar dv-reveal dv-reveal-d4">
             <div className="dv-pillar-num">∞</div>
