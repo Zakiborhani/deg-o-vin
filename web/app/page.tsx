@@ -370,9 +370,9 @@ export default function Home() {
           loop
           playsInline
           preload="auto"
-          poster="/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif"
+          poster="/images/dov-hero-poster.jpg"
         >
-          <source src="/videos/pizza-oven-hero.mp4" type="video/mp4" />
+          <source src="/videos/dov-hero.mp4" type="video/mp4" />
         </video>
         <div className="dv-hero-vignette" />
         <div className="dv-hero-line-l" />
