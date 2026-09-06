@@ -546,7 +546,7 @@ export default function Home() {
           <div className="dv-about-img-col dv-reveal">
             <Image
               ref={aboutImgRef}
-              src="/images/82cc8b71-861d-40fa-99e9-fbe42f36017f.jfif"
+              src="/images/about-ambiance.jpg"
               alt="Deg & Vin ambiance"
               fill
               sizes="(max-width: 860px) 100vw, 50vw"

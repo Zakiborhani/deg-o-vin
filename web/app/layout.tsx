@@ -25,7 +25,7 @@ const montserrat = Montserrat({
 const title = "Deg & Vin — Pizza Contemporanea Italiana · Stockholm";
 const description =
   "Äkta napolitansk pizza med surdeg 48h, DOP-certifierade råvaror och passion för kvalitet. Beställ online eller boka bord i Stockholm.";
-const ogImage = "/images/f96e6614-0744-493d-9b21-acad6459e30f.jfif";
+const ogImage = "/images/og-cover.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://degovin.se"),
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description,
     url: "https://degovin.se",
     siteName: "Deg & Vin",
-    images: [{ url: ogImage, width: 1200, height: 800, alt: "Deg & Vin — Pizza Contemporanea Italiana" }],
+    images: [{ url: ogImage, width: 1600, height: 1104, alt: "Deg & Vin — Pizza Contemporanea Italiana" }],
     locale: "sv_SE",
     type: "website",
   },
