@@ -594,6 +594,40 @@
   font-size: .64rem; color: var(--dv-muted);
 }
 .dv-footer-passion { font-family: var(--font-cormorant), serif; font-style: italic; font-size: .88rem; color: rgba(196,151,59,.78); }
+.dv-footer-legal a { color: var(--dv-muted); text-decoration: none; transition: color .25s; }
+.dv-footer-legal a:hover { color: var(--dv-cream); }
+
+/* legal pages (integritetspolicy) */
+.dv-legal { min-height: 100vh; display: flex; flex-direction: column; }
+.dv-legal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 4.5vw; height: 76px; border-bottom: 1px solid var(--dv-border);
+}
+.dv-legal-back {
+  font-size: .62rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--dv-gold-lt); text-decoration: none; transition: color .3s;
+}
+.dv-legal-back:hover { color: var(--dv-cream); }
+.dv-legal-main { flex: 1; width: 100%; max-width: 760px; margin: 0 auto; padding: 5rem 1.25rem 6rem; }
+.dv-legal-main .dv-section-body { max-width: none; font-size: 1.3rem; line-height: 1.8; color: var(--dv-desc); }
+.dv-legal-updated { font-size: .7rem; letter-spacing: .08em; color: var(--dv-muted); }
+.dv-legal-main section { margin-top: 3rem; }
+.dv-legal-main h2 {
+  font-family: var(--font-playfair), serif; font-size: 1.35rem; font-weight: 600;
+  color: var(--dv-cream); margin-bottom: 1rem;
+}
+.dv-legal-main p, .dv-legal-main li, .dv-legal-main address {
+  font-size: .9rem; line-height: 1.85; color: var(--dv-desc); font-style: normal;
+}
+.dv-legal-main p + p, .dv-legal-main p + ul, .dv-legal-main ul + p, .dv-legal-main p + address { margin-top: 1rem; }
+.dv-legal-main ul { padding-left: 1.2rem; list-style: none; }
+.dv-legal-main li { position: relative; margin-bottom: .5rem; }
+.dv-legal-main li::before {
+  content: ''; position: absolute; left: -1.2rem; top: .85em; width: 8px; height: 1px; background: var(--dv-gold);
+}
+.dv-legal-main strong { color: var(--dv-text); font-weight: 600; }
+.dv-legal-main a { color: var(--dv-gold-lt); text-underline-offset: 3px; }
+.dv-legal-main a:hover { color: var(--dv-cream); }
 
 /* responsive */
 @media (max-width: 1024px) {

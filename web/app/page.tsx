@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const MARQUEE_ITEMS = [
@@ -723,6 +724,7 @@ export default function Home() {
           </div>
           <div className="dv-footer-bottom">
             <span>&copy; 2026 Deg &amp; Vin. Alla rättigheter förbehållna.</span>
+            <span className="dv-footer-legal"><Link href="/integritetspolicy">Integritetspolicy</Link></span>
             <span className="dv-footer-passion">Grazia di cuore e buon appetito ♥</span>
           </div>
         </div>
