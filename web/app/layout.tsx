@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://degovin.se"),
   title,
   description,
+  alternates: { canonical: "/" },
   openGraph: {
     title,
     description,

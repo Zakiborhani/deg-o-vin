@@ -16,10 +16,24 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+const title = "Integritetspolicy · Deg & Vin";
+const description = "Så behandlar Deg & Vin (Italian Food Tre AB) dina personuppgifter.";
+
+// openGraph and twitter replace the layout's objects wholesale, so the shared fields are repeated here.
 export const metadata: Metadata = {
-  title: "Integritetspolicy · Deg & Vin",
-  description: "Så behandlar Deg & Vin (Italian Food Tre AB) dina personuppgifter.",
+  title,
+  description,
   alternates: { canonical: "/integritetspolicy" },
+  openGraph: {
+    title,
+    description,
+    url: "/integritetspolicy",
+    siteName: "Deg & Vin",
+    images: [{ url: "/images/og-cover.jpg", width: 1600, height: 1104, alt: "Deg & Vin — Pizza Contemporanea Italiana" }],
+    locale: "sv_SE",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/images/og-cover.jpg"] },
 };
 
 const UPDATED = "1 oktober 2026";
