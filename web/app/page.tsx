@@ -27,23 +27,23 @@ const ANTIPASTI = [
 ];
 
 const BIANCHE = [
-  { name: "Salmone", price: "249 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, allo santa (stark evo olja), basilika.", tags: ["bianca"] },
-  { name: "Carbonara", price: "189 kr", desc: "Fior di latte, knaprig guanciale, Pecorino-Romano, ägg, evo olja, svart pepper.", tags: ["bianca"] },
+  { name: "Salmone", price: "249 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, olio santo (stark evo olja), basilika.", tags: ["bianca"] },
+  { name: "Carbonara", price: "189 kr", desc: "Fior di latte, knaprig guanciale, Pecorino Romano, ägg, evo olja, svartpeppar.", tags: ["bianca"] },
   { name: "Genovese", price: "249 kr", desc: "Fior di latte, krämig pesto Genovese med mandlar, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca", "veg"] },
   { name: "Prosciuttina", price: "219 kr", desc: "Parmigiano-Reggiano, mozzarella di Bufala, Prosciutto di Parma 24 mån lagrat, basilika.", tags: ["bianca"] },
-  { name: "Tartufata", price: "239 kr", desc: "Pancetta (rökt salt), salsiccia (italiensk korv), champignon, fior di latte, tartufo tryffelkräm, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca"] },
-  { name: "4 Formaggi", price: "189 kr", desc: "Fyra ostar, Parmigiano-Reggiano 30 mån, basilico, evo olja.", tags: ["bianca", "veg"] },
+  { name: "Tartufata", price: "239 kr", desc: "Pancetta (rökt salt), salsiccia (italiensk korv), champinjoner, fior di latte, tartufo tryffelkräm, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca"] },
+  { name: "4 Formaggi", price: "189 kr", desc: "Fyra ostar, Parmigiano-Reggiano 30 mån, basilika, evo olja.", tags: ["bianca", "veg"] },
 ];
 
 const ROSSE = [
   { name: "Margherita", price: "159 kr", desc: "San Marzano-tomater, fior di latte mozzarella, evo olja, flingsalt, basilika.", tags: ["rossa", "veg"] },
-  { name: "Peperoni", price: "179 kr", desc: "Fior di latte mozzarella, pepperoni salami, basilik.", tags: ["rossa"] },
-  { name: "Bambino", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, basilik.", tags: ["rossa"] },
-  { name: "Marinara 2.0", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, premium anchovies (Slowfood), oregano, evo olja, basilik.", tags: ["rossa"] },
-  { name: "Vegetariana", price: "199 kr", desc: "San Marzano-tomater, mozzarella, rostade champinjoner, körsbärstomater semidry, vitlök, taggiasche oliver, oregano, kronärtskocka, evo olja, basilik.", tags: ["rossa", "veg"] },
-  { name: "Bufalina", price: "179 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilik.", tags: ["rossa"] },
+  { name: "Peperoni", price: "179 kr", desc: "Fior di latte mozzarella, pepperoni salami, basilika.", tags: ["rossa"] },
+  { name: "Bambino", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, basilika.", tags: ["rossa"] },
+  { name: "Marinara 2.0", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, premium anchovies (Slowfood), oregano, evo olja, basilika.", tags: ["rossa"] },
+  { name: "Vegetariana", price: "199 kr", desc: "San Marzano-tomater, mozzarella, rostade champinjoner, körsbärstomater semidry, vitlök, taggiasche oliver, oregano, kronärtskocka, evo olja, basilika.", tags: ["rossa", "veg"] },
+  { name: "Bufalina", price: "179 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilika.", tags: ["rossa"] },
   { name: "Diavola", price: "169 kr", desc: "San Marzano-tomater, 'nduja (mjuk kryddig salami från Spilinga), San Marzano piccante, fior di latte mozzarella, evo olja, basilika.", tags: ["rossa"] },
-  { name: "Capricciosa", price: "189 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, champinjoner, rostade kronärtskockor, basilik.", tags: ["rossa"] },
+  { name: "Capricciosa", price: "189 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, champinjoner, rostade kronärtskockor, basilika.", tags: ["rossa"] },
 ];
 
 const DESSERT = [
@@ -110,7 +110,7 @@ const ROSE_WINES: Wine[] = [
 
 const SPARKLING_WINES: Wine[] = [
   { name: "Brut di Falanghina - QVID", producer: "La Guardiense", origin: "Italien, Kampanien, Sannio Beneventano", grapes: "100% Falanghina", vintage: "NV (icke-årgångsbetecknat)", notes: "Frisk och fruktig med inslag av päron, persika, kex och grillad citron. Bubblorna är skarpa men smaken rund.", abv: "12%", special: "Tillverkas enligt Charmat-metoden (andra jäsningen i trycktank) och lagras i fyra månader på jästfällningen för att utveckla en subtil brödighet." },
-  { name: "Galaverna", producer: "Ca' de Lion", origin: "Italien, Piemonte, Asti", grapes: "100% Pinot Nero", vintage: "NV (icke-årgångsbetecknat)", notes: "Ljus halmgul färg med fin perlage. Doft av acacia och lindblom. Torr och fruktig smak med inslag av citrusfrukter, gröna äpplen och florala toner.", abv: "12%", special: "Namnet \"Galaverna\" syftar på det frosttäcke som kan uppstå i Piemonte, vilket återspeglas i vinets friska karaktär." },
+  { name: "Galaverna", producer: "Ca' de Lion", origin: "Italien, Piemonte, Asti", grapes: "100% Pinot Nero", vintage: "NV (icke-årgångsbetecknat)", notes: "Ljus halmgul färg med fin perlage. Doft av akacia och lindblom. Torr och fruktig smak med inslag av citrusfrukter, gröna äpplen och florala toner.", abv: "12%", special: "Namnet \"Galaverna\" syftar på det frosttäcke som kan uppstå i Piemonte, vilket återspeglas i vinets friska karaktär." },
   { name: "Franciacorta Brut (EKO)", producer: "La Fiòca", origin: "Italien, Lombardiet, Franciacorta", grapes: "Chardonnay och Pinot Bianco", vintage: "NV (icke-årgångsbetecknat)", notes: "Fruktig doft med inslag av gula päron, honung, ananas, kex och mandarin.", abv: "12,5%", special: "Producerad enligt traditionell metod (andra jäsningen på flaska) med ekologisk certifiering." },
 ];
 
@@ -501,7 +501,7 @@ export default function Home() {
             </div>
           ))}
 
-          <p className="dv-menu-note" style={{ marginTop: "3.5rem" }}>Grazia di cuore e buon appetito ♥</p>
+          <p className="dv-menu-note" style={{ marginTop: "3.5rem" }}>Grazie di cuore e buon appetito ♥</p>
         </div>
       </section>
 
@@ -563,7 +563,7 @@ export default function Home() {
             <h2 className="dv-section-title dv-reveal dv-reveal-d1">Passione per la<br/>Qualità Italiana</h2>
             <div className="dv-gold-rule dv-reveal dv-reveal-d2" />
             <p className="dv-section-body dv-reveal dv-reveal-d2">
-              Vi är ett pizzarestaurang i Stockholm med ett enkelt löfte: äkta napolitansk teknik
+              Vi är en italiensk pizzeria i Stockholm med ett enkelt löfte: äkta napolitansk teknik
               möter de bästa italienska råvarorna. Vår deg jäser i 48 timmar, toppingarna kommer
               direkt från producenter med IGP- och DOP-certifieringar.
             </p>
@@ -725,7 +725,7 @@ export default function Home() {
           <div className="dv-footer-bottom">
             <span>&copy; 2026 Deg &amp; Vin. Alla rättigheter förbehållna.</span>
             <span className="dv-footer-legal"><Link href="/integritetspolicy">Integritetspolicy</Link></span>
-            <span className="dv-footer-passion">Grazia di cuore e buon appetito ♥</span>
+            <span className="dv-footer-passion">Grazie di cuore e buon appetito ♥</span>
           </div>
         </div>
       </footer>

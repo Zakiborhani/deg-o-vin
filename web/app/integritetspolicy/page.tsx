@@ -173,7 +173,7 @@ export default function Integritetspolicy() {
         <div className="dv-footer-inner">
           <div className="dv-footer-bottom">
             <span>&copy; 2026 Deg &amp; Vin. Alla rättigheter förbehållna.</span>
-            <span className="dv-footer-passion">Grazia di cuore e buon appetito ♥</span>
+            <span className="dv-footer-passion">Grazie di cuore e buon appetito ♥</span>
           </div>
         </div>
       </footer>
