@@ -43,7 +43,7 @@ export default function Integritetspolicy() {
     <div className="dv-legal">
       <header className="dv-legal-head">
         <Link className="dv-nav-logo" href="/" aria-label="Till startsidan">
-          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={300} height={295} preload />
+          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={535} height={600} preload />
         </Link>
         <Link className="dv-legal-back" href="/">&larr; Tillbaka</Link>
       </header>

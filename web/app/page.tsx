@@ -334,7 +334,7 @@ export default function Home() {
       {/* nav */}
       <nav className={`dv-nav${scrolled ? " scrolled" : ""}`}>
         <a className="dv-nav-logo" href="#dv-hero">
-          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={300} height={295} priority />
+          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={535} height={600} priority />
         </a>
         <ul id="dv-nav-links" className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
@@ -672,7 +672,7 @@ export default function Home() {
             </div>
             <div className="dv-footer-find-info">
               <div className="dv-footer-h">Hitta oss</div>
-              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={300} height={295} />
+              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={535} height={600} />
               <div className="dv-footer-find-items">
                 <div className="dv-footer-find-item">
                   <span className="dv-footer-find-label">Adress</span>
@@ -700,7 +700,7 @@ export default function Home() {
 
           <div className="dv-footer-top">
             <div>
-              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={300} height={295} />
+              <Image src="/images/logo-full.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--full" width={718} height={900} />
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
             </div>
             <div>

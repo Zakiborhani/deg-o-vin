@@ -117,6 +117,7 @@
   transition: opacity .3s;
 }
 .dv-logo-img--lg { height: 64px; }
+.dv-logo-img--full { height: 128px; margin-bottom: 1rem; }
 .dv-nav-logo:hover .dv-logo-img { opacity: .8; }
 .dv-nav-links { display: flex; gap: 2.4rem; list-style: none; }
 .dv-nav-links a {
