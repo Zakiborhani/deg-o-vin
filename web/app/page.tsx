@@ -346,7 +346,8 @@ export default function Home() {
           <li><a href="#dv-footer"  onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
           <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
           <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
-          <li><a href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>Boka bord</a></li>
+          {/* Same-tab and no menu close: on iOS a new-tab link whose menu re-renders mid-tap often never opens */}
+          <li><a href="https://book.easytable.com/book/?id=85c56&lang=auto" rel="noopener noreferrer">Boka bord</a></li>
         </ul>
         <div className="dv-nav-btns">
           <a className="dv-btn dv-btn-outline" href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a>
