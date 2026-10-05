@@ -25,7 +25,7 @@ const montserrat = Montserrat({
   weight: ["300", "400", "600", "700"],
 });
 
-const title = "Deg & Vin – Napolitansk pizzeria i Bromma, Stockholm";
+const title = "Deg ø Vin – Napolitansk pizzeria i Bromma, Stockholm";
 const description =
   "Napolitansk surdegspizza (48h) på Spångavägen 309 i Bromma. DOP-råvaror, italienska viner och lunch för 159 kr. Boka bord eller beställ online.";
 const ogImage = "/images/og-cover.jpg";
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
     title,
     description,
     url: "https://degovin.se",
-    siteName: "Deg & Vin",
-    images: [{ url: ogImage, width: 1600, height: 1104, alt: "Deg & Vin — Pizza Contemporanea Italiana" }],
+    siteName: "Deg ø Vin",
+    images: [{ url: ogImage, width: 1600, height: 1104, alt: "Deg ø Vin — Pizza Contemporanea Italiana" }],
     locale: "sv_SE",
     type: "website",
   },
@@ -56,7 +56,7 @@ const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "@id": "https://degovin.se/#restaurant",
-  name: "Deg & Vin",
+  name: "Deg ø Vin",
   description,
   image: "https://degovin.se" + ogImage,
   url: "https://degovin.se",

@@ -338,7 +338,7 @@ export default function Home() {
       {/* nav */}
       <nav className={`dv-nav${scrolled ? " scrolled" : ""}`}>
         <a className="dv-nav-logo" href="#dv-hero">
-          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={36} height={40} priority />
+          <Image src="/images/logo.webp" alt="Deg ø Vin" className="dv-logo-img" width={36} height={40} priority />
         </a>
         <ul id="dv-nav-links" className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
@@ -556,7 +556,7 @@ export default function Home() {
             <Image
               ref={aboutImgRef}
               src="/images/about-ambiance.jpg"
-              alt="Matsalen på Deg & Vin i Bromma"
+              alt="Matsalen på Deg ø Vin i Bromma"
               fill
               sizes="(max-width: 860px) 100vw, 50vw"
             />
@@ -594,7 +594,7 @@ export default function Home() {
         <div className="dv-gallery-inner">
           <div className="dv-gallery-head dv-reveal">
             <div className="dv-section-label">Galleri</div>
-            <h2 className="dv-section-title">Upplev Deg &amp; Vin</h2>
+            <h2 className="dv-section-title">Upplev Deg ø Vin</h2>
           </div>
           <div className="dv-filmstrip-wrap">
             <div className="dv-filmstrip" ref={filmstripRef} role="region" aria-label="Bildgalleri" tabIndex={0}>
@@ -645,7 +645,7 @@ export default function Home() {
 
       {/* book */}
       <section id="dv-book">
-        <div className="dv-book-bg-text">Deg &amp; Vin</div>
+        <div className="dv-book-bg-text">Deg ø Vin</div>
         <div className="dv-book-inner dv-reveal">
           <div className="dv-section-label center">Boka &amp; Beställ</div>
           <h2 className="dv-section-title">
@@ -675,12 +675,12 @@ export default function Home() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Deg & Vin på kartan"
+                title="Deg ø Vin på kartan"
               />
             </div>
             <div className="dv-footer-find-info">
               <div className="dv-footer-h">Hitta oss</div>
-              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={57} height={64} />
+              <Image src="/images/logo.webp" alt="Deg ø Vin" className="dv-logo-img dv-logo-img--lg" width={57} height={64} />
               <div className="dv-footer-find-items">
                 <div className="dv-footer-find-item">
                   <span className="dv-footer-find-label">Adress</span>
@@ -708,7 +708,7 @@ export default function Home() {
 
           <div className="dv-footer-top">
             <div>
-              <Image src="/images/logo-full.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--full" width={102} height={128} />
+              <Image src="/images/logo-full.webp" alt="Deg ø Vin" className="dv-logo-img dv-logo-img--full" width={102} height={128} />
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
             </div>
             <div>
@@ -731,7 +731,7 @@ export default function Home() {
             </div>
           </div>
           <div className="dv-footer-bottom">
-            <span>&copy; 2026 Deg &amp; Vin. Alla rättigheter förbehållna.</span>
+            <span>&copy; 2026 Deg ø Vin. Alla rättigheter förbehållna.</span>
             <span className="dv-footer-legal"><Link href="/integritetspolicy">Integritetspolicy</Link></span>
             <span className="dv-footer-passion">Grazie di cuore e buon appetito ♥</span>
           </div>

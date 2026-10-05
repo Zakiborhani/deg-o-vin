@@ -16,8 +16,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
-const title = "Integritetspolicy · Deg & Vin";
-const description = "Så behandlar Deg & Vin (Italian Food Tre AB) dina personuppgifter.";
+const title = "Integritetspolicy · Deg ø Vin";
+const description = "Så behandlar Deg ø Vin (Italian Food Tre AB) dina personuppgifter.";
 
 // openGraph and twitter replace the layout's objects wholesale, so the shared fields are repeated here.
 export const metadata: Metadata = {
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/integritetspolicy",
-    siteName: "Deg & Vin",
-    images: [{ url: "/images/og-cover.jpg", width: 1600, height: 1104, alt: "Deg & Vin — Pizza Contemporanea Italiana" }],
+    siteName: "Deg ø Vin",
+    images: [{ url: "/images/og-cover.jpg", width: 1600, height: 1104, alt: "Deg ø Vin — Pizza Contemporanea Italiana" }],
     locale: "sv_SE",
     type: "website",
   },
@@ -43,13 +43,13 @@ export default function Integritetspolicy() {
     <div className="dv-legal">
       <header className="dv-legal-head">
         <Link className="dv-nav-logo" href="/" aria-label="Till startsidan">
-          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={36} height={40} preload />
+          <Image src="/images/logo.webp" alt="Deg ø Vin" className="dv-logo-img" width={36} height={40} preload />
         </Link>
         <Link className="dv-legal-back" href="/">&larr; Tillbaka</Link>
       </header>
 
       <main className="dv-legal-main">
-        <div className="dv-section-label">Deg &amp; Vin</div>
+        <div className="dv-section-label">Deg ø Vin</div>
         <h1 className="dv-section-title">Integritetspolicy</h1>
         <p className="dv-legal-updated">Senast uppdaterad {UPDATED}</p>
         <div className="dv-gold-rule" />
@@ -63,7 +63,7 @@ export default function Integritetspolicy() {
         <section>
           <h2>Personuppgiftsansvarig</h2>
           <p>
-            Italian Food Tre AB, som driver Deg &amp; Vin, är personuppgiftsansvarig för behandlingen
+            Italian Food Tre AB, som driver Deg ø Vin, är personuppgiftsansvarig för behandlingen
             som beskrivs här.
           </p>
           <address>
@@ -172,7 +172,7 @@ export default function Integritetspolicy() {
       <footer className="dv-footer">
         <div className="dv-footer-inner">
           <div className="dv-footer-bottom">
-            <span>&copy; 2026 Deg &amp; Vin. Alla rättigheter förbehållna.</span>
+            <span>&copy; 2026 Deg ø Vin. Alla rättigheter förbehållna.</span>
             <span className="dv-footer-passion">Grazie di cuore e buon appetito ♥</span>
           </div>
         </div>
