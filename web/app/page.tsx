@@ -170,6 +170,7 @@ const TABS = [
 ];
 
 export default function Home() {
+
   const [scrolled,    setScrolled]   = useState(false);
   const [loaded,      setLoaded]     = useState(false);
   const [activeTab,     setActiveTab]     = useState("antipasti");
@@ -177,23 +178,30 @@ export default function Home() {
   const [mobileOpen,    setMobileOpen]    = useState(false);
   const [tabsScrolled,  setTabsScrolled]  = useState(false);
 
-  const heroBgRef    = useRef<HTMLVideoElement>(null);
+  const heroBgRef    = useRef<HTMLDivElement>(null);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const aboutImgRef  = useRef<HTMLImageElement>(null);
   const dotRef       = useRef<HTMLDivElement>(null);
   const ringRef      = useRef<HTMLDivElement>(null);
   const tabBarRef    = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
-  const loaderRef    = useRef<HTMLDivElement>(null);
   const filmstripRef = useRef<HTMLDivElement>(null);
   const filmFillRef  = useRef<HTMLDivElement>(null);
 
-  /* loader */
+  /* hero video — fetched only after the page has loaded, so it never competes
+     with the still, fonts and scripts for bandwidth; skipped under Save-Data */
   useEffect(() => {
-    const t = setTimeout(() => {
-      loaderRef.current?.classList.add("hidden");
+    const start = () => {
       setLoaded(true);
-    }, 1200);
-    return () => clearTimeout(t);
+      const video = heroVideoRef.current;
+      const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
+      if (!video || conn?.saveData) return;
+      video.src = "/videos/dov-hero.mp4";
+      video.play().catch(() => {});
+    };
+    if (document.readyState === "complete") { start(); return; }
+    window.addEventListener("load", start, { once: true });
+    return () => window.removeEventListener("load", start);
   }, []);
 
   /* hero bg zoom */
@@ -224,15 +232,18 @@ export default function Home() {
 
   /* custom cursor */
   useEffect(() => {
+    // Touch devices hide the cursor in CSS; don't run a per-frame loop for nothing.
+    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     let mx = 0, my = 0, rx = 0, ry = 0;
     const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
     document.addEventListener("mousemove", onMove);
     let rafId: number;
+    // transform instead of left/top: compositor-only, no layout per frame
     const loop = () => {
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
-      if (dotRef.current)  { dotRef.current.style.left = mx + "px"; dotRef.current.style.top = my + "px"; }
-      if (ringRef.current) { ringRef.current.style.left = rx + "px"; ringRef.current.style.top = ry + "px"; }
+      if (dotRef.current)  dotRef.current.style.transform  = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+      if (ringRef.current) ringRef.current.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
       rafId = requestAnimationFrame(loop);
     };
     rafId = requestAnimationFrame(loop);
@@ -324,17 +335,10 @@ export default function Home() {
       <div id="dv-cur-dot"  ref={dotRef}  />
       <div id="dv-cur-ring" ref={ringRef} />
 
-      {/* loader */}
-      <div id="dv-loader" ref={loaderRef}>
-        <div className="dv-loader-logo">Deg <span>&amp;</span> Vin</div>
-        <div className="dv-loader-bar" />
-        <div className="dv-loader-sub">Pizza Contemporanea Italiana</div>
-      </div>
-
       {/* nav */}
       <nav className={`dv-nav${scrolled ? " scrolled" : ""}`}>
         <a className="dv-nav-logo" href="#dv-hero">
-          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={535} height={600} priority />
+          <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img" width={36} height={40} priority />
         </a>
         <ul id="dv-nav-links" className={`dv-nav-links${mobileOpen ? " mobile-open" : ""}`}>
           <li><a href="#dv-menu"    onClick={() => setMobileOpen(false)}>Meny</a></li>
@@ -342,7 +346,7 @@ export default function Home() {
           <li><a href="#dv-footer"  onClick={() => setMobileOpen(false)}>Hitta oss</a></li>
           <li><a href="#dv-about"   onClick={() => setMobileOpen(false)}>Om oss</a></li>
           <li><a href="#dv-gallery" onClick={() => setMobileOpen(false)}>Galleri</a></li>
-          <li><a href="#dv-book"    onClick={() => setMobileOpen(false)}>Boka bord</a></li>
+          <li><a href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>Boka bord</a></li>
         </ul>
         <div className="dv-nav-btns">
           <a className="dv-btn dv-btn-outline" href="https://book.easytable.com/book/?id=85c56&lang=auto" target="_blank" rel="noopener noreferrer">Boka bord</a>
@@ -363,26 +367,30 @@ export default function Home() {
 
       {/* hero */}
       <section id="dv-hero">
-        <video
-          className="dv-hero-bg"
-          ref={heroBgRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/images/dov-hero-poster.jpg"
-        >
-          <source src="/videos/dov-hero.mp4" type="video/mp4" />
-        </video>
+        {/* The still is a real <img> so it counts as the LCP element and gets a
+            responsive, high-priority fetch; the video covers it once it plays. */}
+        <div className="dv-hero-bg" ref={heroBgRef}>
+          <div className="dv-hero-zoom">
+            <Image src="/images/dov-hero-poster.webp" alt="" fill priority sizes="120vw" style={{ objectFit: "cover" }} />
+            <video
+              className="dv-hero-video"
+              ref={heroVideoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="none"
+            />
+          </div>
+        </div>
         <div className="dv-hero-vignette" />
         <div className="dv-hero-line-l" />
         <div className="dv-hero-line-r" />
         <div className="dv-hero-content">
-          <div className="dv-hero-eyebrow">Surdeg 48h &nbsp;&middot;&nbsp; Stockholm</div>
+          <div className="dv-hero-eyebrow">Surdeg 48h &nbsp;&middot;&nbsp; Bromma, Stockholm</div>
           <h1 className="dv-hero-title">
             <span className="line"><span className="line-inner">Deg</span></span>
-            <span className="line"><span className="line-inner">&amp; Vin</span></span>
+            <span className="line"><span className="line-inner"><span aria-hidden="true">ø</span><span className="sr-only">&amp;</span> Vin</span></span>
           </h1>
           <div className="dv-hero-rule" />
           <p className="dv-hero-sub">Pizza Contemporanea Italiana</p>
@@ -548,7 +556,7 @@ export default function Home() {
             <Image
               ref={aboutImgRef}
               src="/images/about-ambiance.jpg"
-              alt="Deg & Vin ambiance"
+              alt="Matsalen på Deg & Vin i Bromma"
               fill
               sizes="(max-width: 860px) 100vw, 50vw"
             />
@@ -672,7 +680,7 @@ export default function Home() {
             </div>
             <div className="dv-footer-find-info">
               <div className="dv-footer-h">Hitta oss</div>
-              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={535} height={600} />
+              <Image src="/images/logo.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--lg" width={57} height={64} />
               <div className="dv-footer-find-items">
                 <div className="dv-footer-find-item">
                   <span className="dv-footer-find-label">Adress</span>
@@ -700,7 +708,7 @@ export default function Home() {
 
           <div className="dv-footer-top">
             <div>
-              <Image src="/images/logo-full.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--full" width={718} height={900} />
+              <Image src="/images/logo-full.webp" alt="Deg & Vin" className="dv-logo-img dv-logo-img--full" width={102} height={128} />
               <p className="dv-footer-tagline">Pizza Contemporanea Italiana</p>
             </div>
             <div>

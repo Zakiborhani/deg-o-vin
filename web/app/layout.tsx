@@ -14,17 +14,20 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
   style: ["normal", "italic"],
+  // Only used for small italic accents; keep its files off the critical path
+  // so the CSS and the hero poster arrive sooner on slow connections.
+  preload: false,
 });
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["300", "400", "600", "700"],
 });
 
-const title = "Deg & Vin — Pizza Contemporanea Italiana · Stockholm";
+const title = "Deg & Vin – Napolitansk pizzeria i Bromma, Stockholm";
 const description =
-  "Äkta napolitansk pizza med surdeg 48h, DOP-certifierade råvaror och passion för kvalitet. Beställ online eller boka bord i Stockholm.";
+  "Napolitansk surdegspizza (48h) på Spångavägen 309 i Bromma. DOP-råvaror, italienska viner och lunch för 159 kr. Boka bord eller beställ online.";
 const ogImage = "/images/og-cover.jpg";
 
 export const metadata: Metadata = {
@@ -52,18 +55,22 @@ export const metadata: Metadata = {
 const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
+  "@id": "https://degovin.se/#restaurant",
   name: "Deg & Vin",
+  description,
   image: "https://degovin.se" + ogImage,
   url: "https://degovin.se",
   telephone: "+46737221125",
   email: "info@degovin.se",
   servesCuisine: ["Italian", "Pizza"],
   priceRange: "$$",
+  hasMap: "https://maps.google.com/maps?q=Sp%C3%A5ngav%C3%A4gen+309%2C+163+46+Bromma%2C+Sverige",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Spångavägen 309",
     postalCode: "163 46",
     addressLocality: "Bromma",
+    addressRegion: "Stockholms län",
     addressCountry: "SE",
   },
   openingHoursSpecification: [
@@ -73,7 +80,12 @@ const restaurantJsonLd = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: "Sunday", opens: "12:00", closes: "21:00" },
   ],
   menu: "https://degovin.se/#dv-menu",
-  acceptsReservations: "true",
+  acceptsReservations: "https://book.easytable.com/book/?id=85c56&lang=auto",
+  potentialAction: {
+    "@type": "OrderAction",
+    target: "https://qopla.com/restaurant/deg-och-vin/qMbRR7pDXd/order",
+    deliveryMethod: ["http://purl.org/goodrelations/v1#DeliveryModePickUp"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
