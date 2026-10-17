@@ -19,6 +19,10 @@ const legacyRedirects: Record<string, string> = {
 };
 
 const nextConfig: NextConfig = {
+  // Images uploaded in the Dara IT portal (gallery) go through next/image too.
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "portal-dara-it.com", pathname: "/api/public/cms-image" }],
+  },
   async redirects() {
     return [
       // order.degovin.se was the old online-ordering site and still gets search traffic.

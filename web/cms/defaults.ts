@@ -1,0 +1,109 @@
+// Today's content of degovin.se. These are the defaults in cms/manifest.ts:
+// the site shows them until the customer saves something in the Dara IT portal.
+
+export const MARQUEE_ITEMS = [
+  "Öppet tisdag – söndag",
+  "Italienska premiumvaror",
+  "Surdeg 48h",
+  "Tutto fatto con passione",
+  "DOP & IGP certifierade",
+  "Stockholm",
+  "Pizza Contemporanea Italiana",
+];
+
+export const ANTIPASTI = [
+  { name: "Attenzione Combo", price: "229 kr", desc: "För 2–3 pers. Nybakat surdeg vitlöksbröd med Eko Burrata, körsbärstomater, saffransolja, Parmesan DOP Sicilia, evo olja, aceto balsamico IGP, basilika.", tags: ["new"] },
+  { name: "Mandorla", price: "49 kr", desc: "Rostad mandelsmör, crackersbröd, siciliansk salt, evo olja, aceto balsamico IGP, basilika.", tags: ["veg"] },
+  { name: "Burratina", price: "129 kr", desc: "Körsbärstomater, saffransolja, crackersbröd, siciliansk salt, evo olja, aceto balsamico IGP + Prosciutto di Parma 40 gr.", tags: [] },
+  { name: "Peco & Zola", price: "89 kr", desc: "Gorgonzola eko rullad i Pecorino Romano. Rekommenderas med crackersbröd.", tags: ["veg"] },
+  { name: "Cerignola", price: "55 kr", desc: "Gröna oliver från Toscana.", tags: ["veg"] },
+  { name: "EKO Taggiasche", price: "40 kr", desc: "Eko-odlade taggiasche oliver, evo olja.", tags: ["veg"] },
+  { name: "Charcbricka Originale", price: "229 kr", desc: "För 2 pers. Salami, Prosciutto di Parma DOP, mozzarella di Bufala, tomater, Parmigiano-Reggiano, Pecorino, EKO oliver, hembakat bröd.", tags: [] },
+  { name: "Rè Su Charcbricka", price: "319 kr", desc: "För 2 pers. Premium urval, kökets bästa val från charkuteriet.", tags: [] },
+  { name: "Pane Aglio", price: "79 kr", desc: "Surdeg, tomatsalsa, sicilianskt saffransalt, evo olja.", tags: ["veg"] },
+];
+
+export const BIANCHE = [
+  { name: "Salmone", price: "249 kr", desc: "Varmrökt lax, fior di latte, körsbärstomater, stracciatella, olio santo (stark evo olja), basilika.", tags: ["bianca"] },
+  { name: "Carbonara", price: "189 kr", desc: "Fior di latte, knaprig guanciale, Pecorino Romano, ägg, evo olja, svartpeppar.", tags: ["bianca"] },
+  { name: "Genovese", price: "249 kr", desc: "Fior di latte, krämig pesto Genovese med mandlar, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca", "veg"] },
+  { name: "Prosciuttina", price: "219 kr", desc: "Parmigiano-Reggiano, mozzarella di Bufala, Prosciutto di Parma 24 mån lagrat, basilika.", tags: ["bianca"] },
+  { name: "Tartufata", price: "239 kr", desc: "Pancetta (rökt salt), salsiccia (italiensk korv), champinjoner, fior di latte, tartufo tryffelkräm, Parmigiano-Reggiano 40 mån, evo olja.", tags: ["bianca"] },
+  { name: "4 Formaggi", price: "189 kr", desc: "Fyra ostar, Parmigiano-Reggiano 30 mån, basilika, evo olja.", tags: ["bianca", "veg"] },
+];
+
+export const ROSSE = [
+  { name: "Margherita", price: "159 kr", desc: "San Marzano-tomater, fior di latte mozzarella, evo olja, flingsalt, basilika.", tags: ["rossa", "veg"] },
+  { name: "Peperoni", price: "179 kr", desc: "Fior di latte mozzarella, pepperoni salami, basilika.", tags: ["rossa"] },
+  { name: "Bambino", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, basilika.", tags: ["rossa"] },
+  { name: "Marinara 2.0", price: "169 kr", desc: "San Marzano-tomater, fior di latte mozzarella, premium anchovies (Slowfood), oregano, evo olja, basilika.", tags: ["rossa"] },
+  { name: "Vegetariana", price: "199 kr", desc: "San Marzano-tomater, mozzarella, rostade champinjoner, körsbärstomater semidry, vitlök, taggiasche oliver, oregano, kronärtskocka, evo olja, basilika.", tags: ["rossa", "veg"] },
+  { name: "Bufalina", price: "179 kr", desc: "San Marzano-tomater, mozzarella di Bufala, Prosciutto di Parma 22 mån, basilika.", tags: ["rossa"] },
+  { name: "Diavola", price: "169 kr", desc: "San Marzano-tomater, 'nduja (mjuk kryddig salami från Spilinga), San Marzano piccante, fior di latte mozzarella, evo olja, basilika.", tags: ["rossa"] },
+  { name: "Capricciosa", price: "189 kr", desc: "San Marzano-tomater, fior di latte mozzarella, kokt skinka, champinjoner, rostade kronärtskockor, basilika.", tags: ["rossa"] },
+];
+
+export const DESSERT = [
+  { name: "Choklad Tartufo", price: "50 kr", desc: "" },
+  { name: "Tiramisù Classico", price: "79 kr", desc: "Mascarpone med savoiardier, eko kakao." },
+  { name: "Pizza Nutellina", price: "139 kr", desc: "Nocciolata, omsorgsfull, oemotståndlig." },
+  { name: "G.E.T.", price: "169 kr", desc: "Grappa, Espresso, Tryffel. Kaffekräm, 3 cl grappa." },
+];
+
+export const EXTRAS = [
+  { name: "Tartufo", price: "50 kr", desc: "" },
+  { name: "Mozzarella di Bufala", price: "30 kr", desc: "" },
+  { name: "Grönt / Ost", price: "30 kr", desc: "" },
+  { name: "Glutenfri botten", price: "40 kr", desc: "" },
+];
+
+export const GALLERY_ITEMS = [
+  { src: "/images/gallery/surdeg-handknadad.jpg", alt: "Handknådad surdeg", caption: "Surdeg, formad för hand", ratio: 1.35, position: "center 55%" },
+  { src: "/images/gallery/vin-charkuteri.jpg", alt: "Vin och charkuteribricka", caption: "Vin och charkuteri, valda med omsorg", ratio: 1.05, position: "center" },
+  { src: "/images/gallery/mozzarella-fardsk.jpg", alt: "Färsk mozzarella", caption: "Färsk mozzarella, varje dag", ratio: 0.78, position: "center" },
+  { src: "/images/gallery/margherita-detalj.jpg", alt: "Nygräddad pizza margherita i närbild", caption: "Krispig, luftig, 48 timmar värd", ratio: 0.95, position: "center" },
+  { src: "/images/gallery/pizza-fran-ugnen.jpg", alt: "Pizza serveras från ugnen", caption: "Rakt från ugnen till bordet", ratio: 0.92, position: "center 40%" },
+];
+
+export type Wine = {
+  name: string; producer: string; origin: string; grapes: string;
+  vintage: string; notes: string; abv: string; special: string;
+};
+
+export const WHITE_WINES: Wine[] = [
+  { name: "La Tosca Cortese DOC", producer: "Ca' de Lion", origin: "Italien, Piemonte", grapes: "100% Cortese", vintage: "2022", notes: "Friskt och fruktigt med toner av grönt äpple, citrus och vita blommor. Lätt kropp och elegant syra.", abv: "12%", special: "Traditionell vinifikation i ståltank." },
+  { name: "Falanghina del Sannio DOC", producer: "La Guardiense", origin: "Italien, Kampanien", grapes: "100% Falanghina", vintage: "2023", notes: "Fräsch och aromatisk med inslag av päron, citrus, mandel och örter. Rund munkänsla med livlig syra.", abv: "13,5%", special: "Lokal druva från Sannio-området, hållbar odling." },
+  { name: "Etna Bianco Ginestra DOC", producer: "Calcagno", origin: "Italien, Sicilien, Etna", grapes: "100% Carricante", vintage: "2022", notes: "Frisk och elegant med toner av citrus, gula äpplen, vita blommor och en subtil mineralitet från vulkanisk jord. Lång, frisk avslutning.", abv: "13,5%", special: "Vulkaniskt terroir, småskalig produktion." },
+  { name: "Verdicchio dei Castelli di Jesi DOC", producer: "Filodivino", origin: "Italien, Marche", grapes: "100% Verdicchio", vintage: "2022", notes: "Torrt och balanserat vin med inslag av citrus, gröna äpplen och mandel. Fin mineralitet och ren finish.", abv: "12,5%", special: "Ekologiskt certifierad produktion." },
+  { name: "Langhe Barolo Bianco Rabel DOCG", producer: "Azienda Agricola Cagliero", origin: "Italien, Piemonte, Langhe", grapes: "Arneis, Favorita (Vermentino), Sauvignon Blanc", vintage: "2023", notes: "Torrt och friskt med toner av citrus, vita blommor, örter och subtila inslag av tropisk frukt. Elegant syra och balanserad struktur.", abv: "14%", special: "Ekologiskt odlad, unik blandning från Langhe-regionen." },
+  { name: "Grillo Catalano Sicilia DOC", producer: "Catalano", origin: "Italien, Sicilien", grapes: "100% Grillo", vintage: "2023", notes: "Aromatisk och fruktig med toner av tropisk frukt, citrus och örter. Mjuk och balanserad syra.", abv: "12,5%", special: "Typisk siciliansk druva, vinifierad på ståltank." },
+];
+
+export const RED_WINES: Wine[] = [
+  { name: "Aglianico Benevento DOC", producer: "La Guardiense", origin: "Italien, Kampanien, Benevento", grapes: "100% Aglianico", vintage: "2023", notes: "Djup färg med granatröda nyanser. Aromer av körsbär och söt vanilj från fatlagring. Fyllig och intensiv smak med mjuka tanniner och lång eftersmak.", abv: "13%", special: "Druvor skördas för hand och vinifieras med skalmaceration i 18 dagar." },
+  { name: "Barbera d'Asti DOC", producer: "Cascina Vigna", origin: "Italien, Piemonte", grapes: "100% Barbera", vintage: "2023", notes: "Fruktig och livlig med toner av röda bär och kryddor. Balanserad syra och mjuka tanniner.", abv: "15%", special: "Traditionell vinifikation med fokus på druvans fräschör." },
+  { name: "Piemonte Albarossa DOC", producer: "Viotti", origin: "Italien, Piemonte", grapes: "100% Albarossa", vintage: "2017", notes: "Intensiv rubinröd färg med violetta nyanser. Aromer av plommon, björnbär och blåbär med en hint av harts. Fyllig och smakrik med fin syra och eleganta tanniner.", abv: "14%", special: "Unik druvsort skapad genom korsning av Nebbiolo och Barbera." },
+  { name: "Barolo del Comune di Verduno DOCG", producer: "Cascina Massara", origin: "Italien, Piemonte, Verduno", grapes: "100% Nebbiolo", vintage: "2019", notes: "Aromer av rosor, violer och torkade örter, kombinerat med mogna röda körsbär, plommon och vilda hallon. Elegant med silkeslena tanniner och lång, blommig eftersmak.", abv: "14,5%", special: "Lång lagringspotential, drickfärdig nu till 2040." },
+  { name: "Dolcetto d'Alba – Nonna Marcelinna DOC", producer: "Cagliero", origin: "Italien, Piemonte, Langhe", grapes: "100% Dolcetto", vintage: "2023", notes: "Fräsch och ungdomlig doft med inslag av frukt och blommor. Fyllig och balanserad smak med en avslutande ton av mandel.", abv: "13%", special: "Traditionell vinifikation med fokus på druvans fräschör." },
+  { name: "Frappato DOCG", producer: "Catalano", origin: "Italien, Sicilien", grapes: "100% Frappato", vintage: "2022", notes: "Fruktig och aromatisk med toner av röda bär och örter. Lätt kropp med mjuka tanniner och frisk syra.", abv: "13%", special: "Typisk siciliansk druvsort som ger eleganta och friska viner." },
+  { name: "Chianti Classico DOCG (EKO)", producer: "Lilliano Ruspoli", origin: "Italien, Toscana, Chianti", grapes: "Sangiovese, Colorino, Merlot", vintage: "2021", notes: "Mjuk, rund och frisk med ljusa röda frukter, körsbär och hallon. Medelfyllig med smidiga tanniner och balanserad syra.", abv: "14,5%", special: "Ekologiskt odlad med fokus på traditionella metoder." },
+  { name: "Barolo Massara DOCG", producer: "Cascina Massara", origin: "Italien, Piemonte", grapes: "100% Nebbiolo", vintage: "2015", notes: "Aromer av blå blommor, läder och kryddor. Smak av svart plommon, tobak och stjärnanis med polerade tanniner och frisk syra.", abv: "15%", special: "Lång lagringspotential, drickfärdig 2022–2030." },
+  { name: "Amarone della Valpolicella", producer: "Azienda Agricola Mizzon", origin: "Italien, Veneto, Valpolicella", grapes: "Corvina Veronese, Corvinone, Rondinella och Molinara", vintage: "2017", notes: "Granatröd färg med orangea nyanser. Doft av körsbärslikör, plommon, geranium, liljekonvalj, choklad och tobak. Smaken är mjuk, varm och omslutande, med en uppfriskande och smakrik avslutning.", abv: "15,5%", special: "Producerad enligt den traditionella appassimento-metoden, där druvorna torkas för att koncentrera smaker och sockerhalter." },
+  { name: "Barolo Monvigliero", producer: "Cascina Massara", origin: "Italien, Piemonte, Barolo (Monvigliero, Verduno)", grapes: "100% Nebbiolo", vintage: "2017", notes: "Doft av röda bär, läder och tryffel. Smaken erbjuder hallonsylt, tobak och lakrits med finpolerade tanniner och frisk syra.", abv: "Ca 14,5%", special: "Druvorna skördas för hand och transporteras i små trälådor för att bevara kvaliteten." },
+];
+
+export const ROSE_WINES: Wine[] = [
+  { name: "Langhe Rosato Chiamblò DOC", producer: "Azienda Agricola Cagliero", origin: "Italien, Piemonte, Langhe", grapes: "Barbera och Nebbiolo", vintage: "2022", notes: "Fruktigt och ungdomligt med toner av vilda blommor. Lätt men harmoniskt och välstrukturerat.", abv: "12,5%", special: "Druvorna skördas för hand och vinifieras varsamt för att bevara fräschören och aromerna." },
+  { name: "Albarossa Rosé – Munferié SQNPI", producer: "Viotti", origin: "Italien, Piemonte", grapes: "Albarossa", vintage: "2023", notes: "Mineralisk och fruktig med inslag av jordgubbar, hallon och citrus. Frisk och smakrik med lång eftersmak.", abv: "13%", special: "SQNPI – hållbar och integrerad produktion utan användning av bekämpningsmedel eller kemikalier." },
+];
+
+export const SPARKLING_WINES: Wine[] = [
+  { name: "Brut di Falanghina - QVID", producer: "La Guardiense", origin: "Italien, Kampanien, Sannio Beneventano", grapes: "100% Falanghina", vintage: "NV (icke-årgångsbetecknat)", notes: "Frisk och fruktig med inslag av päron, persika, kex och grillad citron. Bubblorna är skarpa men smaken rund.", abv: "12%", special: "Tillverkas enligt Charmat-metoden (andra jäsningen i trycktank) och lagras i fyra månader på jästfällningen för att utveckla en subtil brödighet." },
+  { name: "Galaverna", producer: "Ca' de Lion", origin: "Italien, Piemonte, Asti", grapes: "100% Pinot Nero", vintage: "NV (icke-årgångsbetecknat)", notes: "Ljus halmgul färg med fin perlage. Doft av akacia och lindblom. Torr och fruktig smak med inslag av citrusfrukter, gröna äpplen och florala toner.", abv: "12%", special: "Namnet \"Galaverna\" syftar på det frosttäcke som kan uppstå i Piemonte, vilket återspeglas i vinets friska karaktär." },
+  { name: "Franciacorta Brut (EKO)", producer: "La Fiòca", origin: "Italien, Lombardiet, Franciacorta", grapes: "Chardonnay och Pinot Bianco", vintage: "NV (icke-årgångsbetecknat)", notes: "Fruktig doft med inslag av gula päron, honung, ananas, kex och mandarin.", abv: "12,5%", special: "Producerad enligt traditionell metod (andra jäsningen på flaska) med ekologisk certifiering." },
+];
+
+export const SPARKLING_ROSE_WINES: Wine[] = [
+  { name: "Piemonte Rosato Frizzante 360° DOC", producer: "Ca' de Lion", origin: "Italien, Piemonte", grapes: "100% Pinot Nero", vintage: "2023", notes: "Ljusrosa färg med doft av jordgubbar och körsbär. Smaken är fruktig och frisk med livliga bubblor.", abv: "12%", special: "Namnet \"360°\" syftar på vinets mångsidighet och dess förmåga att passa vid olika tillfällen." },
+  { name: "Millesimato Rosé Brut", producer: "Masottina", origin: "Italien, Veneto", grapes: "Glera och Pinot Nero", vintage: "2023", notes: "Ljusrosa färg med doft av vilda jordgubbar, hallon, röda vinbär och körsbär, kompletterat med toner av vit persika och blommor. Smaken är frisk, fruktig och elegant med en lång, behaglig avslutning.", abv: "12%", special: "Tillverkad enligt Charmat-metoden med en andra jäsning på 90 dagar, vilket ger vinet dess fina bubblor och eleganta karaktär." },
+];
