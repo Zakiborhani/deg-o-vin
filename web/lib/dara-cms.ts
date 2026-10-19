@@ -1,9 +1,14 @@
-// Dara IT portal CMS (format v2) — framework-free core.
-// Plain TypeScript and fetch only, so the same file works in Next, Nuxt, Astro
-// or plain Node; the framework-specific glue is a few lines around it.
-// Spec: friendly-crm-enhancer/docs/cms-v2.md
+// Dara IT portal CMS (format v2) — framework-free core, version 1.
 //
+// COPY of friendly-crm-enhancer/docs/dara-cms.ts (the original, with tests).
+// Do not edit here: change the original, bump its version and copy it to
+// every site.
+//
+// Plain TypeScript and fetch only, so it works in Nuxt, Next, Astro or Node;
+// the framework glue is a few lines around it (examples in docs/cms-v2.md).
 // Values are plain data: render them as text, never as HTML.
+
+export const DARA_CMS_CORE_VERSION = 1;
 
 export type CmsValue = string | number | boolean | null;
 export type CmsRow = { _id?: string } & Record<string, CmsValue>;
@@ -33,7 +38,7 @@ export async function fetchCmsContent(
 ): Promise<CmsContent> {
   const empty: CmsContent = { fields: {}, lists: {} };
   if (!opts.customerId) return empty;
-  const url = `${opts.portalUrl ?? DEFAULT_PORTAL_URL}/api/public/cms/v2/${opts.customerId}`;
+  const url = `${opts.portalUrl || DEFAULT_PORTAL_URL}/api/public/cms/v2/${opts.customerId}`;
   try {
     const res = await fetch(url, { ...init, signal: AbortSignal.timeout(opts.timeoutMs ?? 4000) });
     if (!res.ok) return empty; // 404 before the first manifest
@@ -48,16 +53,16 @@ export async function fetchCmsContent(
 export function createCms<M extends CmsManifest>(manifest: M, content: CmsContent) {
   type FieldKey = M["fields"][number]["key"];
   type ListKey = M["lists"][number]["key"];
-  const fieldDefaults = Object.fromEntries(manifest.fields.map((f) => [f.key, f.default ?? null]));
-  const listDefaults = Object.fromEntries(manifest.lists.map((l) => [l.key, (l.default ?? []) as CmsRow[]]));
+  const fieldDefaults: Record<string, CmsValue> = Object.fromEntries(manifest.fields.map((f) => [f.key, f.default ?? null]));
+  const listDefaults: Record<string, CmsRow[]> = Object.fromEntries(manifest.lists.map((l) => [l.key, (l.default ?? []) as CmsRow[]]));
 
   /** A saved value wins, even when empty ("" hides optional things like links). */
   const field = (key: FieldKey): CmsValue => {
-    const v = content.fields[key];
+    const v = content.fields?.[key];
     return v !== undefined && v !== null ? v : (fieldDefaults[key] ?? null);
   };
   const list = (key: ListKey): CmsRow[] => {
-    const rows = content.lists[key];
+    const rows = content.lists?.[key];
     return Array.isArray(rows) ? rows : (listDefaults[key] ?? []);
   };
   return { field, list, text: (key: FieldKey) => cmsText(field(key)) };
@@ -82,4 +87,9 @@ export function cmsLines(v: CmsValue | undefined): string[] {
 /** Richtext split into paragraphs on empty lines. */
 export function cmsParagraphs(v: CmsValue | undefined): string[] {
   return cmsText(v).split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+}
+
+/** Number or undefined. */
+export function cmsNumber(v: CmsValue | undefined): number | undefined {
+  return typeof v === "number" && Number.isFinite(v) ? v : undefined;
 }
